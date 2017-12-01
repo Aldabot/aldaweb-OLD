@@ -1,0 +1,33 @@
+{#
+  Nunjucks Templating!
+  Homepage: https://mozilla.github.io/nunjucks/
+  Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+
+{% extends 'layouts/application.html' %}
+
+
+{% block title %}
+  Alda
+{% endblock %}
+
+{% block content %}
+  <!-- <h1 data-module="example">{{ message }}</h1> -->
+  <section>
+    <img class="diamond-shape" src="images/diamond.svg">
+    <div class="wrap">
+      <div class="phone animated fadeIn slideInUp">
+        <video class="preview" autoplay loop muted playsinline>
+          <source src="preview.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <img src="images/phone.svg">
+      </div>
+      <div class="content animated bounceInDown">
+        <h2>Meet Alda.</h2>
+        <p>Your AI friend that looks after your money.</p>
+      </div>
+    </div>
+  </section>
+  <img class="features-diamond" src="images/diamond.svg">
+{% endblock %}

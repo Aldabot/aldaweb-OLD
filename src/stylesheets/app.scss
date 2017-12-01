@@ -1,0 +1,211 @@
+@import "base/typography";
+@import "base/animate.min";
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+  }
+
+body {
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+#terms {
+  .header {
+    poistion: absolute;
+    height: 25vh;
+    width: 100vw;
+    background: linear-gradient(45deg,#A1DEE9,#5C99FF);
+    h1 {
+      color: white;
+      line-height: 25vh;
+      text-align: center;
+      font-size: 2.5em;
+    }
+  }
+  .content {
+    position: relative;
+    width: 80vw;
+    margin: 5vh auto;
+    a {
+      color: #5C99FF;
+    }
+    h3 {
+      font-size: 1.5625rem;
+      margin-top: 40px;
+      margin-bottom: 14px;
+    }
+    p {
+      color: rgba(79,85,92,0.8);
+      font-size: 1.1rem;
+      margin-bottom: 17px;
+    }
+    ul {
+      padding-left: 15px;
+      li {
+        margin-bottom: 15px;
+        color: rgba(79,85,92,0.8);
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+// mobile first
+@media (max-width: 600px) {
+  .diamond-shape, .features-diamond, .content {
+    display: none;
+  }
+
+  .wrap {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg,#5c99ff,#a1dee9);
+    .phone {
+      position: relative;
+      top: 3vh;
+      margin: 0 auto;
+      width: 80vw;
+      .preview {
+        width: 87%;
+        left: 7.6%;
+        top: 11%;
+        position: absolute;
+      }
+      #kontomatik {
+        color: #5c99ff;
+        position: absolute;
+        width: 65%;
+        left: 4%;
+        top: 5%;
+        position: absolute;
+        text-align: center;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-delay: 0s;
+        font-size: 15em;
+      }
+      .kontomatikSuccess {
+        color: #5c99ff;
+        top: 15% !important;
+        width: 100% !important;
+        text-align: center;
+        margin: 0 auto !important;
+        font-size: 2em !important;
+      }
+      .kontomatikPhoneShape {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+// desktop
+@media (min-width: 601px) {
+  .container {
+    position: relative;
+    left: 100px
+  }
+
+
+  @keyframes diamond-animation {
+      from {
+        top: -100vw;
+        left: -150vw;
+      }
+      to {
+        top: -100vw;
+        left: -100vw;
+      }
+  }
+  .diamond-shape {
+    position: absolute;
+    animation: diamond-animation 1s 0.4s forwards cubic-bezier(0.86, 0, 0.07, 1);
+    top: -100vw;
+    left: -150vw;
+    width: 150vw;
+  }
+
+  @keyframes features-diamond-animation {
+      0% {
+        opacity: 0;
+        right: -50vw;
+        top: 50vh;
+      }
+      50% {
+        opacity: 0.5;
+        top: 50vh;
+        right: -50vw;
+      }
+      100% {
+        top: 49vh;
+        right: -49vw;
+        opacity: 1;
+      }
+  }
+  .features-diamond {
+    position: absolute;
+    animation: features-diamond-animation 0.8s 0.5s forwards;
+    top: 50vh;
+    right: -50vw;
+    width: 100vw;
+    opacity: 0;
+  }
+
+  .wrap {
+    position: relative;
+    top: 60px;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .phone {
+    position: relative;
+    width: 300px;
+    margin-right: 40px;
+  }
+
+    .preview {
+      width: 87%;
+      left: 7.6%;
+      top: 11%;
+      position: absolute;
+    }
+
+  .content h2 {
+    font-size: 4rem;
+    margin: 0.8rem 0;
+  }
+  .content p {
+    font-size: 1.2rem;
+  }
+
+  .kontomatikPhoneShape {
+    width: 130%;
+  }
+
+  #kontomatik {
+    width: 100%;
+    left: 15%;
+    top: 15%;
+    position: absolute;
+    text-align: center;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-delay: 0s;
+    font-size: 15em;
+  }
+
+  .kontomatikSuccess {
+    font-size: 2em !important;
+    color: green;
+  }
+}
