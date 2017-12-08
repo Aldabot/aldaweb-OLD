@@ -17,38 +17,53 @@
   <body>
     
   <!-- <h1 data-module="example">Blendid!</h1> -->
-  <ul uk-accordion>
-    <li class="uk-open">
-        <h3 class="uk-accordion-title">Item 1</h3>
-        <div class="uk-accordion-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-    </li>
-    <li>
-        <h3 class="uk-accordion-title">Item 2</h3>
-        <div class="uk-accordion-content">
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
-        </div>
-    </li>
-    <li>
-        <h3 class="uk-accordion-title">Item 3</h3>
-        <div class="uk-accordion-content">
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
-        </div>
-    </li>
-  </ul>
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left uk-margin-left">
+         <a href="" class="uk-navbar-item uk-logo">Alda</a>
+    </div>
 
-  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-    <div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    <div class="uk-navbar-right uk-margin-right">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Home</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#"><button class="uk-button uk-button-default">Sign Up</button></a></li>
+        </ul>
     </div>
-    <div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
+  </nav>
+
+  <div class="uk-padding">
+    <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+      <div>
+        <div> Video </div>
+      </div>
+      <div>
+        <div> Aldabot </div>
+      </div>
     </div>
-    <div>
-        <div class="uk-card uk-card-default uk-card-body">Item</div>
-    </div>
-</div>
+
+    <h1 class="uk-heading-divider">FAQ</h1>
+
+    <ul uk-accordion>
+      <li class="uk-open">
+          <h3 class="uk-accordion-title">Item 1</h3>
+          <div class="uk-accordion-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+      </li>
+      <li>
+          <h3 class="uk-accordion-title">Item 2</h3>
+          <div class="uk-accordion-content">
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+          </div>
+      </li>
+      <li>
+          <h3 class="uk-accordion-title">Item 3</h3>
+          <div class="uk-accordion-content">
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+          </div>
+      </li>
+    </ul>
+  </div>
 
     
       <script src="javascripts/app.js"></script>
