@@ -8,6 +8,7 @@
 </title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!-- Generate using http://realfavicongenerator.net/ -->
 
 
@@ -16,23 +17,38 @@
   <body>
     
   <!-- <h1 data-module="example">Blendid!</h1> -->
-  <section>
-    <img class="diamond-shape" src="images/diamond.svg">
-    <div class="wrap">
-      <div class="phone animated fadeIn slideInUp">
-        <video class="preview" autoplay loop muted playsinline>
-          <source src="preview.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <img src="images/phone.svg">
-      </div>
-      <div class="content animated bounceInDown">
-        <h2>Meet Alda.</h2>
-        <p>Your AI friend that looks after your money.</p>
-      </div>
+  <ul uk-accordion>
+    <li class="uk-open">
+        <h3 class="uk-accordion-title">Item 1</h3>
+        <div class="uk-accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </li>
+    <li>
+        <h3 class="uk-accordion-title">Item 2</h3>
+        <div class="uk-accordion-content">
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+        </div>
+    </li>
+    <li>
+        <h3 class="uk-accordion-title">Item 3</h3>
+        <div class="uk-accordion-content">
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+        </div>
+    </li>
+  </ul>
+
+  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
     </div>
-  </section>
-  <img class="features-diamond" src="images/diamond.svg">
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+    <div>
+        <div class="uk-card uk-card-default uk-card-body">Item</div>
+    </div>
+</div>
 
     
       <script src="javascripts/app.js"></script>
