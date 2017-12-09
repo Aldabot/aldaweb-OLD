@@ -13,19 +13,22 @@
 
 {% block content %}
   <!-- <h1 data-module="example">{{ message }}</h1> -->
-  <div id="home" uk-height-viewport="offset-top: true" class="uk-section uk-section-xsmall">
+  <section uk-height-viewport="offset-top: true" class="uk-section uk-section-xsmall">
     <img src="images/diamond.svg" class="home-diamond-shape uk-animation-slide-left"/>
     <img src="images/diamond.svg" class="faqs-diamond-shape uk-animation-slide-right-medium"/>
     <div class="uk-container uk-container-small">
       <div class="uk-grid-large" uk-grid-parallax>
         <div class="preview uk-animation-slide-top-small">
-          <video autoplay class="preview-video"><source src="preview.mp4"></video>
-          <img src="images/phone.svg" />
+          <video autoplay loop class="preview-video"><source src="preview.mp4"></video>
+          <img src="images/phone.png" />
         </div>
         <div class="uk-flex uk-flex-middle">
           <div class="uk-animation-slide-bottom-small">
             <h1 class="uk-heading-primary">Alda</h1>
             <p class="uk-align-left">
+              <span class="uk-margin-small-right" uk-icon="icon: check"></span>
+
+          <a href="" uk-icon="icon: heart"></a>
               Your AI friend that looks after your money. <br />
               Sign up for free, it takes less than 2 minutes.
             </p>
@@ -36,5 +39,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 {% endblock %}
