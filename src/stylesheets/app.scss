@@ -12,23 +12,23 @@ $global-link-color: #4091D2;
 
 // 3. Your custom mixin overwrites.
 @import "theme/navbar-mixins";
+@import "theme/accordion-mixins";
 
 // 4. Import UIkit
 @import "uikit/src/scss/uikit-theme";
 
+
+// HOME
+#home {
+  // position: relative;
+  // overflow: hidden;
+}
 .home-diamond-shape {
   position: absolute;
   top: -60vw;
   left: -60vw;
   width: 150vw;
   z-index: 1;
-}
-
-.faqs-diamond-shape {
-  position: absolute;
-  top: 50vh;
-  right: -30vw;
-  width: 60vw;
 }
 
 .preview {
@@ -38,21 +38,31 @@ $global-link-color: #4091D2;
 }
 
   .preview-video {
-    width: 76.70%;
-    left: 18%;
-    top: 12.5%;
+    width: 71%;
+    left: 24%;
+    top: 12.2%;
     position: absolute;
   }
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-  }
+
+// FAQs
+.faqs-diamond-shape {
+  position: absolute;
+  top: 50vh;
+  right: -30vw;
+  width: 60vw;
+  z-index: 1;
+}
+
+// * {
+//     margin: 0;
+//     padding: 0;
+//     border: 0;
+//     outline: 0;
+//     font-size: 100%;
+//     vertical-align: baseline;
+//     background: transparent;
+//   }
 
 // body {
 //   color: black;
