@@ -6,11 +6,24 @@
     <title>{% block title %}{{ title }}{% endblock %}</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     {% include "shared/app-icons.html" %}
     {% block head %}{% endblock %}
   </head>
   <body>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left uk-margin-left">
+           <a href="http://aldabot.es" class="uk-navbar-item uk-logo uk-light">Alda</a>
+      </div>
+
+      <div class="uk-navbar-right uk-margin-right">
+          <ul class="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
+              <li><a href="/" uk-scroll>Home</a></li>
+              <li><a href="faqs.html" uk-scroll>FAQs</a></li>
+              <li><a href="https://www.facebook.com/Aldabot/" target="_blank"><button class="uk-button uk-button-default">Sign Up</button></a></li>
+          </ul>
+      </div>
+    </nav>
     {% block content %}{% endblock %}
     {% block javascript %}
       <script src="javascripts/app.js"></script>
