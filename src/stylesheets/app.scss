@@ -1,14 +1,50 @@
 @import "base/typography";
 @import "base/animate.min";
 
-$global-link-color: #DA7D02;
+// 1. Your custom variables and variable overwrites.
+$global-link-color: #4091D2;
+@import "theme/utility";
+@import "theme/navbar";
+@import "uikit/src/scss/variables-theme";
 
-@import "uikit/src/scss/variables-theme.scss";
-@import "uikit/src/scss/mixins-theme.scss";
+// 2. Import default variables and available mixins.
+@import "uikit/src/scss/mixins-theme";
 
-@mixin hook-card() { color: #000; }
+// 3. Your custom mixin overwrites.
+@import "theme/navbar-mixins";
 
-@import "uikit/src/scss/uikit-theme.scss";
+// 4. Import UIkit
+@import "uikit/src/scss/uikit-theme";
+
+.home-diamond-shape {
+  position: absolute;
+  top: -60vw;
+  left: -60vw;
+  width: 150vw;
+  z-index: 1;
+}
+
+.faqs-diamond-shape {
+  position: absolute;
+  top: 50vh;
+  right: -30vw;
+  width: 60vw;
+}
+
+.preview {
+
+}
+
+  .preview-phone {
+    width: 300px;
+  }
+
+  // .preview-video {
+  //   width: 87%;
+  //   left: 7.6%;
+  //   top: 11%;
+  //   position: absolute;
+  // }
 
 * {
     margin: 0;

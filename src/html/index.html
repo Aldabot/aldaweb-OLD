@@ -16,49 +16,77 @@
   <!-- <h1 data-module="example">{{ message }}</h1> -->
   <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left uk-margin-left">
-         <a href="" class="uk-navbar-item uk-logo">Alda</a>
+         <a href="http://aldabot.es" class="uk-navbar-item uk-logo uk-light">Alda</a>
     </div>
 
     <div class="uk-navbar-right uk-margin-right">
-        <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="#">Home</a></li>
-            <li><a href="#">FAQs</a></li>
+        <ul class="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
+            <li><a href="#faqs" uk-scroll>FAQs</a></li>
             <li><a href="#"><button class="uk-button uk-button-default">Sign Up</button></a></li>
         </ul>
     </div>
   </nav>
 
-  <div class="uk-padding">
-    <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
-      <div>
-        <div> Video </div>
-      </div>
-      <div>
-        <div> Aldabot </div>
+  <div id="home" uk-height-viewport="offset-top: true" class="uk-section .uk-section-xsmall">
+    <img src="images/diamond.svg" class="home-diamond-shape uk-animation-slide-left"/>
+    <div class="uk-container uk-container-small">
+      <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
+        <div class="preview">
+          <!-- <video class="preview-video"><source src="preview.mp4"></video> -->
+          <img src="images/phone.svg" class="preview-phone" />
+        </div>
+        <div class="uk-flex uk-flex-middle">
+          <div>
+            <h1 class="uk-heading-primary uk-align-left">Alda</h1>
+            <p class="uk-align-left">Your AI friend that looks after your money. <br />
+              Sign up for free, it takes less than 2 minutes.</p>
+          </div>
+        </div>
       </div>
     </div>
-
-    <h1 class="uk-heading-divider">FAQ</h1>
-
-    <ul uk-accordion>
-      <li class="uk-open">
-          <h3 class="uk-accordion-title">Item 1</h3>
-          <div class="uk-accordion-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-      </li>
-      <li>
-          <h3 class="uk-accordion-title">Item 2</h3>
-          <div class="uk-accordion-content">
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
-          </div>
-      </li>
-      <li>
-          <h3 class="uk-accordion-title">Item 3</h3>
-          <div class="uk-accordion-content">
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
-          </div>
-      </li>
-    </ul>
   </div>
+
+  <div id="faqs" uk-height-viewport class="uk-section uk-section-large">
+    <img src="images/diamond.svg" class="faqs-diamond-shape uk-animation-slide-right-medium"/>
+    <div class="uk-container uk-container-large">
+      <h1 class="uk-heading-divider">FAQ</h1>
+
+      <ul uk-accordion>
+        <li class="uk-open">
+            <h3 class="uk-accordion-title">Item 1</h3>
+            <div class="uk-accordion-content">
+                <p class="uk-dropcap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </li>
+        <li>
+            <h3 class="uk-accordion-title">Item 2</h3>
+            <div class="uk-accordion-content">
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+            </div>
+        </li>
+        <li>
+            <h3 class="uk-accordion-title">Item 3</h3>
+            <div class="uk-accordion-content">
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+            </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-left uk-margin-left">
+         <a href="http://aldabot.es" class="uk-navbar-item uk-logo">Alda</a>
+    </div>
+
+    <div class="uk-navbar-center">
+      <ul class="uk-navbar-nav">
+          <li><a href="#faqs" uk-scroll>FAQs</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Terminos & Condiciones</a></li>
+      </ul>
+    </div>
+</nav>
 {% endblock %}
