@@ -5,6 +5,7 @@
 $global-link-color: #4091D2;
 @import "theme/utility";
 @import "theme/navbar";
+@import "theme/accordion";
 @import "uikit/src/scss/variables-theme";
 
 // 2. Import default variables and available mixins.
@@ -13,6 +14,7 @@ $global-link-color: #4091D2;
 // 3. Your custom mixin overwrites.
 @import "theme/navbar-mixins";
 @import "theme/accordion-mixins";
+@import "theme/heading-mixins";
 
 // 4. Import UIkit
 @import "uikit/src/scss/uikit-theme";
@@ -52,6 +54,11 @@ $global-link-color: #4091D2;
   right: -30vw;
   width: 60vw;
   z-index: 1;
+}
+
+// navbar
+.navbar {
+  background: linear-gradient(90deg,#A1DEE9,#5C99FF);
 }
 
 // * {
