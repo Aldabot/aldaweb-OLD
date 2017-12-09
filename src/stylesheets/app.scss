@@ -1,6 +1,15 @@
 @import "base/typography";
 @import "base/animate.min";
 
+$global-link-color: #DA7D02;
+
+@import "uikit/src/scss/variables-theme.scss";
+@import "uikit/src/scss/mixins-theme.scss";
+
+@mixin hook-card() { color: #000; }
+
+@import "uikit/src/scss/uikit-theme.scss";
+
 * {
     margin: 0;
     padding: 0;

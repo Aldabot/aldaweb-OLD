@@ -1,19 +1,22 @@
-{#
-  Nunjucks Templating!
-  Homepage: https://mozilla.github.io/nunjucks/
-  Docs: https://mozilla.github.io/nunjucks/api.html
-#}
 
-{% extends 'layouts/application.html' %}
-
-
-{% block title %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
   Alda
-{% endblock %}
+</title>
+    <link rel="stylesheet" href="stylesheets/app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Generate using http://realfavicongenerator.net/ -->
 
 
-{% block content %}
-  <!-- <h1 data-module="example">{{ message }}</h1> -->
+    
+  </head>
+  <body>
+    
+  <!-- <h1 data-module="example">Blendid!</h1> -->
   <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left uk-margin-left">
          <a href="" class="uk-navbar-item uk-logo">Alda</a>
@@ -61,4 +64,9 @@
       </li>
     </ul>
   </div>
-{% endblock %}
+
+    
+      <script src="javascripts/app.js"></script>
+    
+  </body>
+</html>
