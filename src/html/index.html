@@ -6,7 +6,6 @@
 
 {% extends 'layouts/application.html' %}
 
-
 {% block title %}
   Alda
 {% endblock %}
@@ -14,51 +13,28 @@
 
 {% block content %}
   <!-- <h1 data-module="example">{{ message }}</h1> -->
-  <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left uk-margin-left">
-         <a href="" class="uk-navbar-item uk-logo">Alda</a>
-    </div>
-
-    <div class="uk-navbar-right uk-margin-right">
-        <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="#">Home</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#"><button class="uk-button uk-button-default">Sign Up</button></a></li>
-        </ul>
-    </div>
-  </nav>
-
-  <div class="uk-padding">
-    <div class="uk-grid-small uk-child-width-expand@s uk-text-center" uk-grid>
-      <div>
-        <div> Video </div>
+  <section uk-height-viewport="offset-top: true" class="uk-section uk-section-xsmall">
+    <img src="images/diamond.svg" class="home-diamond-shape uk-animation-slide-left"/>
+    <img src="images/diamond.svg" class="home-diamond2-shape uk-animation-slide-right-medium"/>
+    <div class="uk-container uk-container-small">
+      <div class="uk-grid-collapse" uk-grid-parallax>
+        <div class="z-index2 uk-width-expand uk-animation-slide-top-small uk-position-relative">
+          <video autoplay loop class="preview-video"><source src="preview.mp4"></video>
+          <img src="images/phone.png" />
+        </div>
+        <div class="uk-flex uk-flex-middle z-index2">
+          <div class="uk-animation-slide-bottom-small">
+            <h1 class="uk-heading-primary">Alda</h1>
+            <p class="uk-align-left">
+              Your AI friend that looks after your money. <br />
+              Sign up for free, it takes less than 2 minutes.
+            </p>
+            <div>
+              <a href="https://www.facebook.com/Aldabot/" target="_blank"><button class="uk-button uk-button-default">Sign Up</button></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <div> Aldabot </div>
-      </div>
     </div>
-
-    <h1 class="uk-heading-divider">FAQ</h1>
-
-    <ul uk-accordion>
-      <li class="uk-open">
-          <h3 class="uk-accordion-title">Item 1</h3>
-          <div class="uk-accordion-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-      </li>
-      <li>
-          <h3 class="uk-accordion-title">Item 2</h3>
-          <div class="uk-accordion-content">
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
-          </div>
-      </li>
-      <li>
-          <h3 class="uk-accordion-title">Item 3</h3>
-          <div class="uk-accordion-content">
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
-          </div>
-      </li>
-    </ul>
-  </div>
+  </section>
 {% endblock %}

@@ -13,6 +13,6 @@
   },
   "scripts": {
     "start": "yarn run blendid",
-    "build": "yarn run blendid -- build"
+    "build": "yarn run blendid -- build && yarn run blendid -- build"
   }
 }
