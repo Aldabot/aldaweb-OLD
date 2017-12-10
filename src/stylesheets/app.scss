@@ -38,12 +38,25 @@ $global-link-color: #4091D2;
   z-index: 2;
 }
 
+
+@media (max-width: 600px) {
   .preview-video {
-    width: 74.7%;
-    left: 14%;
-    top: 13%;
+    width: 75.4%;
+    left: 13.5%;
+    top: 12.6%;
     position: absolute;
   }
+}
+
+
+@media (min-width: 601px) {
+  .preview-video {
+    width: 73%;
+    left: 13.2%;
+    top: 12.4%;
+    position: absolute;
+  }
+}
 
 
 // FAQs
