@@ -12,7 +12,7 @@
   </head>
   <body class="uk-offcanvas-content">
 
-    <nav class="uk-navbar-container {% block inverse %}{% endblock %} uk-visible@s" uk-navbar>
+    <nav class="uk-navbar-container {% block background %}{% endblock %} uk-visible@s" uk-navbar>
       <div class="uk-navbar-left uk-margin-left">
            <a href="http://aldabot.es" class="uk-navbar-item uk-logo uk-light">Alda</a>
       </div>
@@ -27,7 +27,7 @@
     </nav>
 
 
-    <nav class="uk-navbar-container uk-hidden@s" uk-navbar>
+    <nav class="uk-navbar-container uk-hidden@s {% block mobileBackground %}{% endblock %}" uk-navbar>
         <div class="uk-navbar-right uk-margin-right uk-margin-top">
           <ul class="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
               <li>

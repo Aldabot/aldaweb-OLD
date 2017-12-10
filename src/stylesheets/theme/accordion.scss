@@ -1,1 +1,7 @@
-$accordion-title-font-size: 2em;
+@media (max-width: 600px) {
+  $accordion-title-font-size: 1.3em;
+}
+
+@media (min-width: 600px) {
+  $accordion-title-font-size: 3em;
+}

@@ -34,10 +34,13 @@ $global-link-color: #4091D2;
   z-index: 1;
 }
 
-.z-index2 {
-  z-index: 2;
+.home-diamond2-shape {
+  position: absolute;
+  top: 50vh;
+  right: -30vw;
+  width: 60vw;
+  z-index: 1;
 }
-
 
 @media (max-width: 600px) {
   .preview-video {
@@ -59,17 +62,16 @@ $global-link-color: #4091D2;
 }
 
 
-// FAQs
-.faqs-diamond-shape {
-  position: absolute;
-  top: 50vh;
-  right: -30vw;
-  width: 60vw;
-  z-index: 1;
+// Utilities
+.z-index2 {
+  z-index: 2;
 }
 
-// navbar
-.navbar {
+.padding-bottom {
+  padding-bottom: 20px;
+}
+
+.background-primary {
   background: linear-gradient(90deg,#00c6ff,#0072ff);
 }
 
