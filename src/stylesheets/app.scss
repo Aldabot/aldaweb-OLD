@@ -6,6 +6,7 @@ $global-link-color: #4091D2;
 @import "theme/utility";
 @import "theme/navbar";
 @import "theme/accordion";
+@import "theme/offcanvas";
 @import "uikit/src/scss/variables-theme";
 
 // 2. Import default variables and available mixins.
@@ -33,16 +34,14 @@ $global-link-color: #4091D2;
   z-index: 1;
 }
 
-.preview {
-  position: relative;
-  width: 22vw;
+.z-index2 {
   z-index: 2;
 }
 
   .preview-video {
-    width: 61%;
-    left: 29.8%;
-    top: 13.2%;
+    width: 74.7%;
+    left: 14%;
+    top: 13%;
     position: absolute;
   }
 
