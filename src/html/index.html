@@ -37,7 +37,9 @@
       </div>
     </div>
   </section>
-  <section uk-height-viewport="offset-top: true" class="uk-section uk-section-xsmall">
+
+  <!-- Slider mobile -->
+  <section class="uk-section uk-section-xsmall uk-visible@m">
     <div class="uk-container uk-container-small">
       <div uk-slideshow>
          <div class="uk-padding uk-position-relative uk-light">
@@ -77,5 +79,43 @@
       </div>
     </div>
   </section>
-  <br />
+
+  <!-- Slider mobile -->
+  <section class="uk-section uk-hidden@m">
+    <div class="uk-container uk-padding-remove">
+      <div uk-slideshow="ratio: 1:1">
+         <div class="uk-padding-small">
+          <ul class="uk-slideshow-items  uk-border-rounded">
+              <li>
+                <div class="uk-card uk-card-default uk-card-body uk-height-1-1">
+                  <img class="uk-width-1-4 uk-align-center" src="images/security.png" />
+                  <h3 class="uk-card-title">Seguridad a nivel de banco</h3>
+                  <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="uk-card uk-card-default uk-card-body uk-height-1-1">
+                  <img class="uk-align-center" src="images/saltedge-logo.png" />
+                  <h3 class="uk-card-title">Gestión de datos confiable</h3>
+                  <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="uk-card uk-card-default uk-card-body uk-height-1-1">
+                  <img class="uk-width-1-4 uk-align-center" src="images/users.png" />
+                  <h3 class="uk-card-title">Estamos aquí para ayudar</h3>
+                  <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+          </ul>
+        </div>
+
+        <ul class="uk-dotnav uk-flex-center uk-margin">
+          <li uk-slideshow-item="0"><a href="#">Item 1</a></li>
+          <li uk-slideshow-item="1"><a href="#">Item 2</a></li>
+          <li uk-slideshow-item="2"><a href="#">Item 3</a></li>
+       </ul>
+      </div>
+    </div>
+  </section>
 {% endblock %}
