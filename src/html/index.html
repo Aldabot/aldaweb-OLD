@@ -19,7 +19,7 @@
     <div class="uk-container uk-container-small">
       <div class="uk-grid-collapse" uk-grid-parallax>
         <div class="z-index2 uk-width-expand uk-animation-slide-top-small uk-position-relative">
-          <video muted autoplay loop class="preview-video"><source src="preview.mp4"></video>
+          <video muted autoplay playsinline loop class="preview-video"><source src="intro_web.mp4"></video>
           <img src="images/phone.png" />
         </div>
         <div class="uk-flex uk-flex-middle z-index2">
@@ -34,6 +34,87 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slider mobile -->
+  <section class="uk-section uk-section-xsmall uk-visible@m">
+    <div class="uk-container uk-container-small">
+      <div uk-slideshow>
+         <div class="uk-padding uk-position-relative uk-light">
+          <ul class="uk-slideshow-items">
+              <li>
+                <div class="uk-padding-small uk-height-1-1">
+                    <img class="uk-width-1-4 uk-align-center uk-padding" src="images/security.png" />
+                    <h2 class="uk-text-center uk-heading-primary uk-margin-top" style="color: black">Seguridad a nivel de banco</h2>
+                    <p class="uk-text-lead uk-text-center uk-padding"  style="color: black">Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="uk-padding-small uk-height-1-1">
+                    <img class="uk-width-1-2 uk-align-center" src="images/saltedge-logo.png" />
+                    <h2 class="uk-text-center uk-heading-primary uk-margin-top" style="color: black">Gestión de datos confiable</h2>
+                    <p class="uk-text-lead uk-text-center uk-padding"  style="color: black">Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="uk-padding-small uk-height-1-1">
+                    <img class="uk-width-1-4 uk-align-center uk-padding" src="images/users.png" />
+                    <h2 class="uk-text-center uk-heading-primary uk-margin-top" style="color: black">Estamos aquí para ayudar</h2>
+                    <p class="uk-text-lead uk-text-center uk-padding"  style="color: black">Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+          </ul>
+
+          <a class="uk-slidenav-large uk-position-center-left" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-slidenav-large uk-position-center-right" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+
+        <ul class="uk-dotnav uk-flex-center uk-margin">
+          <li uk-slideshow-item="0"><a href="#">Item 1</a></li>
+          <li uk-slideshow-item="1"><a href="#">Item 2</a></li>
+          <li uk-slideshow-item="2"><a href="#">Item 3</a></li>
+       </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slider mobile -->
+  <section class="uk-section uk-hidden@m">
+    <div class="uk-container uk-padding-remove">
+      <div uk-slideshow="ratio: 1:1">
+         <div class="uk-padding-small">
+          <ul class="uk-slideshow-items  uk-border-rounded">
+              <li>
+                <div class="uk-card uk-card-default uk-card-body uk-height-1-1">
+                  <img class="uk-width-1-4 uk-align-center" src="images/security.png" />
+                  <h3 class="uk-card-title">Seguridad a nivel de banco</h3>
+                  <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="uk-card uk-card-default uk-card-body uk-height-1-1">
+                  <img class="uk-align-center uk-margin-remove-bottom" src="images/saltedge-logo.png" />
+                  <h3 class="uk-card-title uk-margin-remove-top">Gestión de datos confiable</h3>
+                  <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="uk-card uk-card-default uk-card-body uk-height-1-1">
+                  <img class="uk-width-1-4 uk-margin-top uk-align-center" src="images/users.png" />
+                  <h3 class="uk-card-title">Estamos aquí para ayudar</h3>
+                  <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+          </ul>
+        </div>
+
+        <ul class="uk-dotnav uk-flex-center uk-margin">
+          <li uk-slideshow-item="0"><a href="#">Item 1</a></li>
+          <li uk-slideshow-item="1"><a href="#">Item 2</a></li>
+          <li uk-slideshow-item="2"><a href="#">Item 3</a></li>
+       </ul>
       </div>
     </div>
   </section>
