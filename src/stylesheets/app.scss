@@ -2,11 +2,13 @@
 @import "base/animate.min";
 
 // 1. Your custom variables and variable overwrites.
-$global-link-color: #4091D2;
+$global-link-color: #0072ff;
+// $global-color: #0072ff;
 @import "theme/utility";
 @import "theme/navbar";
 @import "theme/accordion";
 @import "theme/offcanvas";
+@import "theme/dotnav";
 @import "uikit/src/scss/variables-theme";
 
 // 2. Import default variables and available mixins.
@@ -16,6 +18,7 @@ $global-link-color: #4091D2;
 @import "theme/navbar-mixins";
 @import "theme/accordion-mixins";
 @import "theme/heading-mixins";
+@import "theme/slideshow-mixins";
 
 // 4. Import UIkit
 @import "uikit/src/scss/uikit-theme";
