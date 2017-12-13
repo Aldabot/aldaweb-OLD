@@ -25,9 +25,9 @@ $global-link-color: #0072ff;
 
 
 // HOME
-#home {
-  // position: relative;
-  // overflow: hidden;
+section {
+  position: relative;
+  overflow-x: hidden;
 }
 .home-diamond-shape {
   position: absolute;
