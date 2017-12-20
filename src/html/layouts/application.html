@@ -12,7 +12,7 @@
     {% block head %}{% endblock %}
   </head>
   <body class="uk-offcanvas-content">
-
+    <div class="uk-overflow-hidden uk-position-relative">
     <nav class="uk-navbar-container {% block background %}{% endblock %} uk-visible@s" uk-navbar>
       <div class="uk-navbar-left uk-margin-left">
            <a href="http://aldabot.es" class="uk-navbar-item uk-logo uk-light">Alda</a>
@@ -69,6 +69,7 @@
       </div>
     </nav>
 
+</div>
     {% block javascript %}
       <script src="javascripts/app.js"></script>
     {% endblock %}
