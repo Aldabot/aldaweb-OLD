@@ -2,16 +2,16 @@ import './modules';
 import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons';
 import Axios from 'axios';
-import $ from 'jquery';
-const uuidv4 = require('uuid/v4');
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter } from 'react-router-dom'
+import App from './react/app.js';
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
-);
-
+ReactDOM.render((
+  <HashRouter>
+    <App />
+  </HashRouter>
+), document.getElementById('root'))
 // loads the Icon plugin
 UIkit.use(Icons);
 
@@ -32,42 +32,3 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-110991818-1', 'auto');
 ga('send', 'pageview');
-
-
-
-
-// Facebook SDK
-window.fbAsyncInit = function() {
-    FB.init({
-      appId            : '1743051222670922',
-      autoLogAppEvents : true,
-      xfbml            : true,
-      version          : 'v2.11'
-    });
-
-    FB.Event.subscribe('send_to_messenger', function(e) {
-        // callback for events triggered by the plugin
-        console.log(e);
-        // if messenger opt-in successfull save uuid cookie
-        // ( the uuid has also been given to the messenger webhook and is connected to the PSID )
-        if (e.event == 'opt_in') {
-          const uuid = uuidv4();
-          $(".fb-send-to-messenger").attr("data-ref", uuid);
-          document.cookie = "session="+uuid;
-        }
-      });
-
-      // FB.Event.subscribe('messaging_optins', function(e) {
-      //     // callback for events triggered by the plugin
-      //     console.log(e);
-      //   });
-
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
