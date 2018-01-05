@@ -28,7 +28,13 @@ export default class SignUp extends React.Component {
           // if messenger opt-in successfull save uuid cookie
           // ( the uuid has also been given to the messenger webhook and is connected to the PSID )
           if (e.event == 'opt_in') {
-            document.cookie = "session="+this.state.uuid;
+            var d = new Date();
+            var exdays = 365;
+            var cname = 'session';
+            var cvalue = this.state.uuid;
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+ d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
             this.props.login();
           }
         }.bind(this));
