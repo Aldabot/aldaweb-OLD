@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 const uuidv4 = require('uuid/v4');
 
-export default class SignUp extends React.Component {
+export default class SelectProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,18 +28,16 @@ export default class SignUp extends React.Component {
 
   render() {
     const banks = this.state.banks.map((bank, index) =>
-      <div key={bank.id} className="uk-width-1-2 uk-width-1-3@s uk-padding-small">
-        <img src={bank.img} />
-      </div>
+        <Link to="#" key={bank.id} className="uk-width-1-2 uk-width-1-3@s uk-padding uk-animation-toggle">
+          <div className="uk-animation-slide-top-small">
+            <img src={bank.img} />
+          </div>
+      </Link>
     );
     return (
-      <section uk-height-viewport="true" className="uk-section uk-padding-remove-top uk-margin-remove-top">
-        <h1 className="uk-heading-primary uk-text-center uk-light background-primary padding-bottom">Añadir Banco</h1>
-
-        <div className="uk-grid-small uk-text-center uk-padding" uk-grid="true">
-          {banks}
-        </div>
-      </section>
+      <div className="uk-grid-medium uk-text-center uk-padding" uk-grid="true">
+        {banks}
+      </div>
     );
   }
 }

@@ -4,7 +4,7 @@ import DarkHeader from './darkHeader.js';
 import Home from './pages/home.js';
 import Faq from './pages/faq.js';
 import SignUp from './pages/signUp.js';
-import AddBank from './pages/addBank.jsx';
+import AddProvider from './pages/addProvider.jsx';
 import Footer from './footer.js';
 import { Switch, Route } from 'react-router-dom'
 
@@ -52,10 +52,10 @@ export default class App extends React.Component {
             <SignUp isLoggedIn={this.state.isLoggedIn} login={this.login}/>
           </div>
         )} />
-      <Route exact path='/addBank' render={(props) => (
+      <Route exact path='/add_provider' render={(props) => (
           <div>
             <DarkHeader isLoggedIn={this.state.isLoggedIn} logout={this.logout} />
-            <AddBank isLoggedIn={this.state.isLoggedIn} login={this.login}/>
+            <AddProvider isLoggedIn={this.state.isLoggedIn} login={this.login}/>
           </div>
         )} />
         <Footer />
