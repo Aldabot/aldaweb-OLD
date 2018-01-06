@@ -9,3 +9,10 @@ export const logout = () => {
     type: 'LOGOUT'
   }
 }
+
+export const selectProvider = (provider) => {
+  return {
+    type: 'SELECT_PROVIDER',
+    provider
+  }
+}

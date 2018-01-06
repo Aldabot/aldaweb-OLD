@@ -5,11 +5,9 @@ import LoginButton from '../components/loginButton.jsx';
 import { logout } from '../actions/index'
 
 export class HeaderComponent extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
+      const { isLoggedIn } = this.props
+
       return (
         <div>
           <nav className="uk-navbar-container uk-visible@s" uk-navbar="true">
@@ -21,6 +19,7 @@ export class HeaderComponent extends React.Component {
                 <ul className="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
                     <li><Link to='/'>Inicio</Link></li>
                     <li><Link to="/faq">Preguntas Frecuentes</Link></li>
+                    {(isLoggedIn) ? <li><Link to="/add_provider">Añadir Banco</Link></li> : ""}
                     <li><LoginButton isLoggedIn={this.props.isLoggedIn} logout={this.props.logout}/></li>
                 </ul>
             </div>
@@ -74,12 +73,9 @@ export const Header = connect(
 
 
 export class DarkHeaderComponent extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-
     render() {
+      const { isLoggedIn } = this.props
+
       return (
         <div>
           <nav className="uk-navbar-container uk-visible@s background-primary uk-light" uk-navbar="true">
@@ -91,6 +87,7 @@ export class DarkHeaderComponent extends React.Component {
                 <ul className="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
                     <li><Link to='/'>Inicio</Link></li>
                     <li><Link to="/faq">Preguntas Frecuentes</Link></li>
+                    {(isLoggedIn) ? <li><Link to="/add_provider">Añadir Banco</Link></li> : ""}
                     <li><LoginButton isLoggedIn={this.props.isLoggedIn} logout={this.props.logout}/></li>
                 </ul>
             </div>

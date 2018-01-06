@@ -1,13 +1,14 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { login } from './actions/index'
 import { Header, DarkHeader } from './containers/header.js';
 import Home from './components/home.js';
 import Faq from './components/faq.js';
 import SignUp from './containers/signUp.js';
-import AddProvider from './components/addProvider.jsx';
+import AddProvider from './containers/addProvider'
+import ConnectProvider from './components/connectProvider'
 import Footer from './components/footer.js';
-import { Switch, Route } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { login } from './actions/index'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { isLoggedIn, selectedProvider } = this.props
     return (
       <div>
         <Switch>
@@ -40,7 +42,13 @@ class App extends React.Component {
           <Route exact path='/add_provider' render={(props) => (
             <div>
               <DarkHeader />
-              <AddProvider isLoggedIn={this.props.isLoggedIn} />
+              <AddProvider />
+            </div>
+          )} />
+          <Route exact path='/connect_provider' render={(props) => (
+            <div>
+              <DarkHeader />
+              <ConnectProvider provider={selectedProvider}/>
             </div>
           )} />
           <Footer />
@@ -52,10 +60,10 @@ class App extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    isLoggedIn: state.isLoggedIn
+    isLoggedIn: state.isLoggedIn,
+    selectedProvider: state.selectedProvider
   }
 }
-
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     login: () => {
@@ -63,7 +71,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
   }
 }
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps

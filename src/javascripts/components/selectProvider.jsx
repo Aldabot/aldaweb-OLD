@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom'
 const uuidv4 = require('uuid/v4');
 
@@ -27,8 +27,10 @@ export default class SelectProvider extends React.Component {
   }
 
   render() {
+    const { selectProvider } = this.props
+
     const banks = this.state.banks.map((bank, index) =>
-        <Link to="#" key={bank.id} className="uk-width-1-2 uk-width-1-3@s uk-padding uk-animation-toggle">
+        <Link to="/connect_provider" onClick={() => {selectProvider(bank)}} key={bank.id} className="uk-width-1-2 uk-width-1-3@s uk-padding uk-animation-toggle">
           <div className="uk-animation-slide-top-small">
             <img src={bank.img} />
           </div>
