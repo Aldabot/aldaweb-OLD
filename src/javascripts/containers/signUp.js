@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { login } from '../actions/index'
 const uuidv4 = require('uuid/v4');
 
-export default class SignUp extends React.Component {
+class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,3 +72,22 @@ export default class SignUp extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    isLoggedIn: state.isLoggedIn
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    login: () => {
+      dispatch(login())
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignUp)

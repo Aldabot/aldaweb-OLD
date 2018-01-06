@@ -1,7 +1,7 @@
 import React from 'react';
 const uuidv4 = require('uuid/v4');
 
-import SelectProvider from '../components/selectProvider'
+import SelectProvider from './selectProvider'
 
 export default class AddProvider extends React.Component {
   render() {
