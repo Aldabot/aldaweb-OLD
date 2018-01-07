@@ -10,14 +10,14 @@ export default class Home extends React.Component {
           <div className="uk-container uk-container-small">
             <div className="uk-grid-collapse" uk-grid-parallax="true">
               <div className="z-index2 uk-width-1-2@m uk-animation-slide-top-small uk-position-relative">
-                <video muted autoPlay playsInline loop className="preview-video"><source src="intro_web.mp4"/></video>
+                <video muted autoPlay playsInline loop className="preview-video"><source src="static/intro_web.mp4"/></video>
                 <img src="images/phone.png" />
               </div>
               <div className="uk-flex uk-width-1-2@m uk-flex-middle z-index2">
                 <div className="uk-animation-slide-bottom-small uk-margin-left">
                   <h1 className="uk-heading-primary">Alda</h1>
                   <p className="uk-text-left">
-                    BIATCH Controla qué pasa con tus cuentas, cómo te valoran los bancos y recibe alertas por comisiones, descubiertos….
+                    Controla qué pasa con tus cuentas, cómo te valoran los bancos y recibe alertas por comisiones, descubiertos….
                     <br /><br />
                     Regístrate gratis en menos de 2 minutos.
                   </p>
