@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "yarn run blendid",
-    "build": "yarn run blendid -- build && yarn run blendid -- build"
+    "build": "yarn run blendid build && yarn run blendid build"
   },
   "devDependencies": {
     "babel-preset-react-app": "^3.1.0"

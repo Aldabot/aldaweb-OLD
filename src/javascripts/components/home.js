@@ -17,7 +17,7 @@ export default class Home extends React.Component {
                 <div className="uk-animation-slide-bottom-small uk-margin-left">
                   <h1 className="uk-heading-primary">Alda</h1>
                   <p className="uk-text-left">
-                    Controla qué pasa con tus cuentas, cómo te valoran los bancos y recibe alertas por comisiones, descubiertos….
+                    BIATCH Controla qué pasa con tus cuentas, cómo te valoran los bancos y recibe alertas por comisiones, descubiertos….
                     <br /><br />
                     Regístrate gratis en menos de 2 minutos.
                   </p>
