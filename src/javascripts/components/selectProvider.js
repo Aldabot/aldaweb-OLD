@@ -14,13 +14,13 @@ export default class SelectProvider extends React.Component {
         },
         {
           id: "2300",
-          name: "Catalunya Caixa",
-          img: "images/bsabadell.jpg"
+          name: "Santander",
+          img: "images/santander.jpg"
         },
         {
           id: "2292",
-          name: "Caixabank",
-          img: "images/bsabadell.jpg"
+          name: "La Caixa",
+          img: "images/lacaixa.jpg"
         }
       ]
     }
