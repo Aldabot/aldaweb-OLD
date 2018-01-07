@@ -38,6 +38,7 @@ class SignUp extends React.Component {
             var expires = "expires="+ d.toUTCString();
             document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
             this.props.login();
+            this.props.history.push('/add_provider')
           }
         }.bind(this));
     }.bind(this);
@@ -54,19 +55,18 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <section uk-height-viewport="true" className="uk-section uk-padding-remove-top uk-margin-remove-top">
-        <h1 className="uk-heading-primary uk-text-center uk-light background-primary padding-bottom">Regístrate</h1>
+      <section className="uk-text-center uk-section uk-padding-remove-top uk-margin-remove-top">
+        <h1 className="uk-heading-primary uk-text-center uk-light background-primary padding-bottom">Sign Up</h1>
 
-        <div className="fb-send-to-messenger"
-          messenger_app_id="1743051222670922"
-          page_id="109017126525560"
-          data-ref={this.state.uuid}
-          color="blue"
-          size="xlarge">
-        </div>
-
-        <div>
-          {(this.props.isLoggedIn) ? "Logged IN" : "Logged OUT" }
+        <div className="uk-padding">
+          <p className="uk-text-lead">Sign up con Facebook Messenger</p>
+          <div className="fb-send-to-messenger"
+            messenger_app_id="1743051222670922"
+            page_id="109017126525560"
+            data-ref={this.state.uuid}
+            color="blue"
+            size="xlarge">
+          </div>
         </div>
       </section>
     );
@@ -74,7 +74,9 @@ class SignUp extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(ownProps)
   return {
+    ...ownProps,
     isLoggedIn: state.isLoggedIn
   }
 }

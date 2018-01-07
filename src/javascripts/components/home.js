@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Home extends React.Component {
   render() {
@@ -22,7 +23,7 @@ export default class Home extends React.Component {
                     Regístrate gratis en menos de 2 minutos.
                   </p>
                   <div>
-                    <a href="https://www.facebook.com/Aldabot/" target="_blank"><button className="uk-button uk-button-default">Regístrate</button></a>
+                    <Link to="/registrate"><button className="uk-button uk-button-default">Sign Up</button></Link>
                   </div>
                 </div>
               </div>

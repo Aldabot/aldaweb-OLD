@@ -10,6 +10,7 @@ import AddProvider from './containers/addProvider'
 import ConnectProvider from './containers/connectProvider'
 import Footer from './components/footer.js';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -33,12 +34,13 @@ class App extends React.Component {
               <Faq />
             </div>
           )} />
-          <Route exact path='/registrate' render={(props) => (
-            <div>
+        <Route exact path='/registrate' render={(props) => {
+            console.log(props)
+            return <div>
               <DarkHeader />
-              <SignUp isLoggedIn={this.props.isLoggedIn} />
+              <SignUp {...props} isLoggedIn={this.props.isLoggedIn} />
             </div>
-          )} />
+          }} />
           <Route exact path='/add_provider' render={(props) => (
             <div>
               <DarkHeader />
@@ -51,8 +53,8 @@ class App extends React.Component {
               <ConnectProvider />
             </div>
           )} />
-          <Footer />
         </Switch>
+        <Footer />
       </div>
     );
   }
