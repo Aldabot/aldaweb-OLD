@@ -16,3 +16,10 @@ export const selectProvider = (provider) => {
     provider
   }
 }
+
+export const selectProviderStatus = (status) => {
+  return {
+    type: 'SELECT_PROVIDER_STATUS',
+    status
+  }
+}

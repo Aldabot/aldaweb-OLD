@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import selectedProvider from './selectedProviderRedux'
+import selectProvider from './selectProviderRedux'
 import isLoggedIn from './isLoggedIn'
 
 const aldaApp = combineReducers({
-  selectedProvider,
+  selectProvider,
   isLoggedIn
 })
 

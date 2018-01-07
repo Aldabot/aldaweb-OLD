@@ -7,7 +7,7 @@ import Home from './components/home.js';
 import Faq from './components/faq.js';
 import SignUp from './containers/signUp.js';
 import AddProvider from './containers/addProvider'
-import ConnectProvider from './components/connectProvider'
+import ConnectProvider from './containers/connectProvider'
 import Footer from './components/footer.js';
 
 class App extends React.Component {
@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoggedIn, selectedProvider } = this.props
+    const { isLoggedIn } = this.props
     return (
       <div>
         <Switch>
@@ -48,7 +48,7 @@ class App extends React.Component {
           <Route exact path='/connect_provider' render={(props) => (
             <div>
               <DarkHeader />
-              <ConnectProvider provider={selectedProvider}/>
+              <ConnectProvider />
             </div>
           )} />
           <Footer />
@@ -61,7 +61,6 @@ class App extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     isLoggedIn: state.isLoggedIn,
-    selectedProvider: state.selectedProvider
   }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {

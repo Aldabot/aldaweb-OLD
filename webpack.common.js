@@ -11,6 +11,7 @@ const PATHS = {
     static: path.join(__dirname, 'src/static'),
     js: path.join(__dirname, 'src/javascripts'),
     styles: path.join(__dirname, 'src/stylesheets'),
+    node_modules: path.join(__dirname, 'node_modules'),
     build: path.join(__dirname, 'build')
 }
 
@@ -29,9 +30,12 @@ module.exports = {
         loader : 'babel-loader'
       },
       {
-        test: /\.(sass|scss)$/,
+        test: /\.(css|sass|scss)$/,
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
-        include: PATHS.styles
+        include: [
+          PATHS.styles,
+          PATHS.node_modules
+        ]
       }
     ]
   },

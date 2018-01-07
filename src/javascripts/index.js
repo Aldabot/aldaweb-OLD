@@ -32,7 +32,11 @@ import App from './app'
 import logger from 'redux-logger'
 
 const preloadState = {
-  isLoggedIn: false
+  isLoggedIn: false,
+  selectProvider: {
+    provider: {},
+    status: 'form'
+  }
 }
 
 let store = createStore(
