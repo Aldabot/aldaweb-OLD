@@ -1,23 +1,14 @@
-{% from 'macros/helpers.html' import sprite %}
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <title>Aldabot</title>
     <link rel="stylesheet" href="stylesheets/app.css">
     <meta name="google-site-verification" content="U7cjJ3xFANXWs-HOmv6mKJdnHzjcFk1a2UZ2VkeXJm4" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {% include "shared/app-icons.html" %}
-    {% block head %}{% endblock %}
   </head>
   <body class="uk-offcanvas-content">
     <div id="root" class="uk-overflow-hidden uk-position-relative"></div>
-
-    {% block content %}{% endblock %}
-
-    {% block javascript %}
-      <script src="javascripts/app.js"></script>
-    {% endblock %}
+      <script src="bundle.js"></script>
   </body>
 </html>
