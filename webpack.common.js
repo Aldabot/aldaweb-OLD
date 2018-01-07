@@ -1,6 +1,5 @@
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -33,11 +32,6 @@ module.exports = {
         test: /\.(sass|scss)$/,
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
         include: PATHS.styles
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader',
-        include: PATHS.img
       }
     ]
   },
