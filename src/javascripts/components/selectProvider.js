@@ -7,37 +7,55 @@ export default class SelectProvider extends React.Component {
     super(props);
     this.state = {
       uuid: uuidv4(),
-      banks: [{
-          id: "2301",
-          name: "Banco Sabadell",
-          img: "images/bsabadell.jpg",
-        },
+      banks: [
         {
           id: "2300",
           name: "Santander",
-          img: "images/santander.jpg"
+          img: "images/santander.png",
+          color: "#fe0000"
         },
         {
           id: "2292",
-          name: "La Caixa",
-          img: "images/lacaixa.jpg"
+          name: "BBVA",
+          img: "images/bbva.jpg",
+          color: "#1c5ba2"
+        },
+        {
+          id: "2292",
+          name: "CaixaBank",
+          img: "images/caixabank.png",
+          color: "white"
+        },
+        {
+          id: "2301",
+          name: "Banco Sabadell",
+          img: "images/bsabadell.jpg",
+          color: "white"
+        },
+        {
+          id: "2301",
+          name: "Bankia",
+          img: "images/bankia.jpg",
+          color: "#46382b"
         }
       ]
     }
   }
 
+
+
   render() {
     const { selectProvider } = this.props
 
     const banks = this.state.banks.map((bank, index) =>
-        <Link to="/connect_provider" onClick={() => {selectProvider(bank)}} key={bank.id} className="uk-width-1-2 uk-width-1-3@s uk-padding uk-animation-toggle">
-          <div className="uk-animation-slide-top-small">
-            <img src={bank.img} />
-          </div>
-      </Link>
+      <div key={bank.id}>
+          <Link to="/connect_provider" onClick={() => {selectProvider(bank)}} class="uk-card uk-card-default uk-card-hover uk-card-body uk-border-rounded bank-card" style={{backgroundColor: bank.color}}>
+            <img className="uk-position-center" src={bank.img} />
+          </Link>
+      </div>
     );
     return (
-      <div className="uk-grid-medium uk-text-center uk-padding" uk-grid="true">
+      <div className="uk-grid-middle uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid="true">
         {banks}
       </div>
     );

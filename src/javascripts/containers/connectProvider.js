@@ -33,40 +33,50 @@ class ConnectProvider extends React.Component {
       <section uk-height-viewport="true" className="uk-section uk-padding-remove-top uk-margin-remove-top">
         <h1 className="uk-heading-primary uk-text-center uk-light background-primary padding-bottom">Conectar</h1>
 
-        <div className="uk-text-center uk-padding">
-          <div uk-icon="icon: lock; ratio: 3"></div>
-          <p className="uk-text-lead">Alda securely connects to your account in read-only mode, using bank-level 256-bit encryption.</p>
-        </div>
+        <div className="uk-container">
 
-        {(() => {
-          switch(providerStatus) {
-            case "form":
-              return <form onSubmit={this.handleSubmit} className="uk-text-center">
-                <fieldset className="uk-fieldset">
-                  <legend className="uk-legend">{provider.name}</legend>
+          <div className="uk-text-center uk-padding">
+            <div uk-icon="icon: lock; ratio: 3"></div>
+            <p className="uk-text-lead">Alda securely connects to your account in read-only mode, using bank-level 256-bit encryption.</p>
+          </div>
 
-                  <div className="uk-margin">
-                    <input className="uk-input uk-form-large uk-form-width-large" type="text" placeholder="Customer Identifier" value={this.state.value} onChange={this.handleChange} />
-                  </div>
-                  <div className="uk-margin">
-                    <div className="uk-margin uk-inline">
-                      <span className="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                      <input className="uk-input uk-form-large uk-form-width-large" type="password" placeholder="Password" value={this.state.value} onChange={this.handleChange} />
+          {(() => {
+            switch(providerStatus) {
+              case "form":
+                return <form onSubmit={this.handleSubmit} className="uk-text-center">
+                  <div className="uk-card rounded-border-bottom uk-align-center uk-card-default uk-width-1-2@m provider-form">
+                    <div className="uk-card-header rounded-border-top" style={{backgroundColor: provider.color}}>
+                      <img className="uk-align-center" src={provider.img}/>
+                    </div>
+                    <div className="uk-card-body">
+                      <fieldset className="uk-fieldset">
+                        <div className="uk-margin">
+                          <input className="uk-input uk-form-large uk-form-width-large" type="text" placeholder="Customer Identifier" value={this.state.value} onChange={this.handleChange} />
+                        </div>
+                        <div className="uk-margin">
+                          <div className="uk-margin uk-inline">
+                            <span className="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input className="uk-input uk-form-large uk-form-width-large" type="password" placeholder="Password" value={this.state.value} onChange={this.handleChange} />
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                    <div className="uk-card-footer uk-flex uk-flex-middle">
+                      <Link to="/add_provider" className="uk-button uk-button-text uk-margin-right">Cancel</Link>
+                      <input className="uk-input uk-form-large uk-form-width-large uk-margin-left" type="submit" value="Submit" />
                     </div>
                   </div>
-
-                  <input className="uk-input uk-form-large uk-form-width-large"  type="submit" value="Submit" />
-                </fieldset>
-              </form>
-            case 'success':
-              return <div className="uk-text-center">
-                <div uk-icon="icon: check; ratio: 5" style={{color: "green"}}></div>
-                <p style={{color: "green"}}>Connectado</p>
-              </div>
-            default:
-              return loadingAnimation
-          }
-        })()}
+                </form>
+              case 'success':
+                return <div className="uk-text-center">
+                  <div uk-icon="icon: check; ratio: 5" style={{color: "green"}}></div>
+                  <p style={{color: "green"}}>Connectado</p>
+                </div>
+              default:
+                return loadingAnimation
+            }
+          })()}
+        </div>
       </section>
     );
   }
