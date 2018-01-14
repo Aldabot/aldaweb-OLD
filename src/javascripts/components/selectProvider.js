@@ -21,13 +21,13 @@ export default class SelectProvider extends React.Component {
           color: "#1c5ba2"
         },
         {
-          id: "2292",
+          id: "2293",
           name: "CaixaBank",
           img: "images/caixabank.png",
           color: "white"
         },
         {
-          id: "2301",
+          id: "2302",
           name: "Banco Sabadell",
           img: "images/bsabadell.jpg",
           color: "white"
@@ -49,7 +49,7 @@ export default class SelectProvider extends React.Component {
 
     const banks = this.state.banks.map((bank, index) =>
       <div key={bank.id}>
-          <Link to="/connect_provider" onClick={() => {selectProvider(bank)}} class="uk-card uk-card-default uk-card-hover uk-card-body uk-border-rounded bank-card" style={{backgroundColor: bank.color}}>
+          <Link to="/connect_provider" onClick={() => {selectProvider(bank)}} className="uk-card uk-card-default uk-card-hover uk-card-body uk-border-rounded bank-card" style={{backgroundColor: bank.color}}>
             <img className="uk-position-center" src={bank.img} />
           </Link>
       </div>
