@@ -39,7 +39,10 @@ module.exports = {
       }
     ]
   },
-  plugins: [
+    node: {
+        fs: 'empty'
+    },
+    plugins: [
     new CleanWebpackPlugin(['build']),
     new CopyWebpackPlugin([
       {

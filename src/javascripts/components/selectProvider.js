@@ -3,44 +3,46 @@ import { Link } from 'react-router-dom'
 const uuidv4 = require('uuid/v4');
 
 export default class SelectProvider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      uuid: uuidv4(),
-      banks: [
-        {
-          id: "2300",
-          name: "Santander",
-          img: "images/santander.png",
-          color: "#fe0000"
-        },
-        {
-          id: "2292",
-          name: "BBVA",
-          img: "images/bbva.jpg",
-          color: "#1c5ba2"
-        },
-        {
-          id: "2293",
-          name: "CaixaBank",
-          img: "images/caixabank.png",
-          color: "white"
-        },
-        {
-          id: "2302",
-          name: "Banco Sabadell",
-          img: "images/bsabadell.jpg",
-          color: "white"
-        },
-        {
-          id: "2301",
-          name: "Bankia",
-          img: "images/bankia.jpg",
-          color: "#46382b"
+    constructor(props) {
+        super(props);
+        this.state = {
+            uuid: uuidv4(),
+            banks: [
+                /* {
+                 *     id: "2300",
+                 *     name: "Santander",
+                 *     img: "images/santander.png",
+                 *     color: "#fe0000"
+                 * },
+                 * {
+                 *     id: "2292",
+                 *     name: "BBVA",
+                 *     img: "images/bbva.jpg",
+                 *     color: "#1c5ba2"
+                 * },*/
+                {
+                    id: "2293",
+                    code: "la_caixa_es",
+                    name: "CaixaBank",
+                    img: "images/caixabank.png",
+                    color: "white"
+                },
+                {
+                    id: "2302",
+                    code: "sabadell_es",
+                    name: "Banco Sabadell",
+                    img: "images/bsabadell.jpg",
+                    color: "white"
+                }
+                /* {
+                 *     id: "2301",
+                 *     name: "Bankia",
+                 *     img: "images/bankia.jpg",
+                 *     color: "#46382b"
+                 * }*/
+            ]
         }
-      ]
     }
-  }
 
 
 

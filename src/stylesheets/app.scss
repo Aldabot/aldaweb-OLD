@@ -74,8 +74,15 @@ $global-link-color: #0072ff;
   background: linear-gradient(90deg,#00c6ff,#0072ff);
 }
 
-.fb-send-to-messenger {
-  margin-left: 110px;
+@media (min-width: 601px) {
+    .fb-send-to-messenger {
+        margin-left: 110px;
+    }
+}
+@media (max-width: 600px) {
+    .fb-send-to-messenger {
+        margin-left: 55px;
+    }
 }
 
 .rounded-border {
