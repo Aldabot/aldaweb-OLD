@@ -2,6 +2,7 @@ var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var S3Plugin = require('webpack-s3-plugin');
 
 const PATHS = {
     index: path.join(__dirname, 'index.html'),
@@ -64,6 +65,16 @@ module.exports = {
         new ExtractTextPlugin({ // define where to save the file
             filename: 'stylesheets/[name].css',
             allChunks: true
+        }),
+        new S3Plugin({
+            s3Options: {
+                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+                region: 'eu-west-1'
+            },
+            s3UploadOptions: {
+                Bucket: 'aldabot.es'
+            }
         })
     ]
-}
+};
