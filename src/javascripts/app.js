@@ -1,24 +1,24 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { login } from './actions/index'
-import { Header, DarkHeader } from './containers/header.js';
+import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { login } from './actions/index';
+import { Header, DarkHeader } from './containers/header.jsx';
 import Home from './components/home.js';
 import Faq from './components/faq.js';
-import SignUp from './containers/signUp.js';
-import AddProvider from './containers/addProvider'
-import ConnectProvider from './containers/connectProvider'
+import SignUp from './containers/signUp.jsx';
+import AddProvider from './containers/addProvider';
+import ConnectProvider from './containers/connectProvider.jsx';
 import Footer from './components/footer.js';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.props.login()
+      this.props.login();
   }
 
   render() {
-    const { isLoggedIn } = this.props
+      const { isLoggedIn } = this.props;
     return (
       <div>
         <Switch>
@@ -35,7 +35,7 @@ class App extends React.Component {
             </div>
           )} />
         <Route exact path='/registrate' render={(props) => {
-            console.log(props)
+            console.log(props);
             return <div>
               <DarkHeader />
               <SignUp {...props} isLoggedIn={this.props.isLoggedIn} />
@@ -50,7 +50,7 @@ class App extends React.Component {
           <Route exact path='/connect_provider' render={(props) => (
             <div>
               <DarkHeader />
-              <ConnectProvider />
+              <ConnectProvider {...props} />
             </div>
           )} />
         </Switch>

@@ -24,12 +24,12 @@ UIkit.use(Icons);
  */
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import { HashRouter, Route } from 'react-router-dom'
-import aldaApp from './reducers/index'
-import App from './app'
-import logger from 'redux-logger'
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import { HashRouter, Route } from 'react-router-dom';
+import aldaApp from './reducers/index';
+import App from './app';
+import logger from 'redux-logger';
 
 const preloadState = {
   isLoggedIn: false,
@@ -53,3 +53,4 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+
