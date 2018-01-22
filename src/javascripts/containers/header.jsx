@@ -27,6 +27,13 @@ export class HeaderComponent extends React.Component {
                                 <span className="uk-margin-small-right" uk-icon="icon: question"></span>Preguntas Frecuentes
                             </Link>
                         </li>
+                        {this.props.isLoggedIn && (
+                             <li onClick={this.hideOffcanvas}>
+                                 <Link to="/add_provider">
+                                     <span className="uk-margin-small-right" uk-icon="icon: unlock"></span>Añadir Banco
+                                 </Link>
+                             </li>
+                        )}
                         <li className="uk-nav-divider"></li>
                         <li><a href="/privacidad.html"><span className="uk-margin-small-right" uk-icon="icon: info"></span> Privacidad</a></li>
                         <li onClick={this.hideOffcanvas} className="uk-margin uk-text-center"><LoginButton  isLoggedIn={this.props.isLoggedIn} logout={this.props.logout}/></li>
@@ -111,6 +118,13 @@ export class DarkHeaderComponent extends React.Component {
                                 <span className="uk-margin-small-right" uk-icon="icon: question"></span>Preguntas Frecuentes
                             </Link>
                         </li>
+                        {this.props.isLoggedIn && (
+                             <li onClick={this.hideOffcanvas}>
+                                 <Link to="/add_provider">
+                                     <span className="uk-margin-small-right" uk-icon="icon: unlock"></span>Añadir Banco
+                                 </Link>
+                             </li>
+                        )}
                         <li className="uk-nav-divider"></li>
                         <li><a href="/privacidad.html"><span className="uk-margin-small-right" uk-icon="icon: info"></span> Privacidad</a></li>
                         <li onClick={this.hideOffcanvas} className="uk-margin uk-text-center"><LoginButton  isLoggedIn={this.props.isLoggedIn} logout={this.props.logout}/></li>
