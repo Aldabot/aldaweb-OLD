@@ -1,8 +1,10 @@
+var dotenv = require('dotenv');
 var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var S3Plugin = require('webpack-s3-plugin');
+dotenv.config();
 
 const PATHS = {
     index: path.join(__dirname, 'index.html'),
