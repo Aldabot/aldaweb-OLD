@@ -55,7 +55,7 @@ class ConnectProvider extends React.Component {
         const sessionId = getCookie('session');
         console.log(sessionId);
         const params = {
-
+            providerCode:  this.props.provider.code,
             username: this.state.username,
             password: this.state.password,
             sessionId
