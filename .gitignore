@@ -1,5 +1,7 @@
 config/task-config.js
+.env
 node_modules
 public
 .DS_Store
-.env
+dist
+
