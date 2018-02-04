@@ -18,9 +18,9 @@ export default class Home extends React.Component {
                 <div className="uk-animation-slide-bottom-small uk-margin-left">
                   <h1 className="uk-heading-primary">Alda</h1>
                   <p className="uk-text-left">
-                    Controla qué pasa con tus cuentas, cómo te valoran los bancos y recibe alertas por comisiones, descubiertos….
+                    Disfruta de tu propio asesor financiero y mejora ya tu situación financiera.
                     <br /><br />
-                    Regístrate gratis en menos de 2 minutos.
+                    Regístrate gratis con solo un clic.
                   </p>
                   <div>
                     <Link to="/registrate"><button className="uk-button uk-button-default">Sign Up</button></Link>
