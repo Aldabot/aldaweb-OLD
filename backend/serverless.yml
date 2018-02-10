@@ -29,12 +29,12 @@ package:
 
 functions:
   loginStatus:
-    handler: handler.hello
+    handler: handler.index
 
     events:
       - http:
           path: loginStatus 
-          method: get
+          method: post 
 
 
 # you can add CloudFormation resource templates here

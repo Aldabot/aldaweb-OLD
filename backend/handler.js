@@ -47,35 +47,51 @@ const getLogin = (loginId) => {
 // LAMBDA HANDLER
 ////////////////////////////////////////////////////////////////////////////////
 
-export const hello = (event, context, callback) => {
-    const loginId = event.body.loginId;
+export const index = (event, context, callback) => {
+    const body = JSON.parse(event.body);
+    const loginId = body.loginId;
 
     getLogin(loginId).then((login) => {
-        console.log(JSON.stringify(login, null, 4));
+        let status = "inProgress";
         if (login.finished) {
             if (login.succeededAt) {
-                console.log("succeeded");
+                status = "succeeded";
             } else {
-                console.log("failed");
+                status = "failed";
             }
-        } else {
-            console.log("in progress");
         }
+        respond(callback, event, status);
     }).catch((error) => {
         console.log(JSON.stringify(error, null, 4));
+        respondError(callback, event, error);
     });
+};
 
+
+////////////////////////////////////////////////////////////////////////////////
+// LAMBDA RESPONSES
+////////////////////////////////////////////////////////////////////////////////
+
+const respond = (callback, event, status) => {
     const response = {
         statusCode: 200,
         body: JSON.stringify({
-            message: 'Go Serverless v1.0! Your function executed successfully!',
+            status,
             input: event
         })
     };
 
-  callback(null, response);
-
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
+    callback(null, response);
 };
 
+const respondError = (callback, event, error) => {
+    const response = {
+        statusCode: 500,
+        body: JSON.stringify({
+            error,
+            input: event
+        })
+    };
+
+    callback(null, response);
+};
