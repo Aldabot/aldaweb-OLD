@@ -5,7 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "animate.css": "^3.5.2",
+    "apisauce": "^0.14.3",
     "blendid": "^4.3.1",
+    "dotenv": "^5.0.0",
     "gulp-s3": "^0.11.0",
     "jquery": "^3.2.1",
     "path": "^0.12.7",
@@ -14,5 +16,15 @@
   "scripts": {
     "start": "yarn run blendid",
     "build": "yarn run blendid -- build && yarn run blendid -- build"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "copy-webpack-plugin": "^4.4.1",
+    "serverless-webpack": "^4.3.0",
+    "webpack": "^3.10.0"
   }
 }
