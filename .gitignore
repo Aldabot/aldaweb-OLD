@@ -5,3 +5,4 @@ public
 .DS_Store
 .webpack
 dist
+yarn-error.log
