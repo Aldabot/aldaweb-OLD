@@ -1,5 +1,6 @@
 'use strict';
 import dotenv from 'dotenv';
+import { create } from 'apisauce';
 dotenv.config();
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -21,6 +22,9 @@ const saltedgeApi = create({
     headers
 });
 
+const getLogin = (loginId) => {
+    return saltedgeApi.get(`/logins?from_id={loginId}`);
+};
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -28,12 +32,15 @@ const saltedgeApi = create({
 ////////////////////////////////////////////////////////////////////////////////
 
 export const hello = (event, context, callback) => {
+    console.log(JSON.stringify(event, null, 4));
+    console.log(JSON.stringify(context, null, 4));
+
   const response = {
     statusCode: 200,
     body: JSON.stringify({
       message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
+      input: event
+    })
   };
 
   callback(null, response);
