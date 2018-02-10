@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { DoubleDounceLoading } from 'styled-spinkit';
 import { selectProviderStatus } from '../actions/index.js';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 
 var instance = axios.create({

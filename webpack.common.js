@@ -16,7 +16,7 @@ const PATHS = {
 
 module.exports = {
     context: PATHS.src,
-    entry: ['./javascripts/index.js', './stylesheets/app.scss'],
+    entry: ['./javascripts/index.jsx', './stylesheets/app.scss'],
     output: {
         filename: '[name].js',
         path: PATHS.build

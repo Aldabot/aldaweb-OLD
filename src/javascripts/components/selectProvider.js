@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 const uuidv4 = require('uuid/v4');
 
 export default class SelectProvider extends React.Component {
