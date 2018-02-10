@@ -35,8 +35,7 @@ const isValidSessionId = (sessionId) => {
     return query(pool, sql, [sessionId]).then((response) => {
         return response[0].isValid ? true : false;
     });
-}
-
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 // LAMBDA HANDLER
