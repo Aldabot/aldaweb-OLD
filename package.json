@@ -10,6 +10,7 @@
     "connect-history-api-fallback": "^1.5.0",
     "connect-modrewrite": "^0.10.2",
     "dotenv": "^4.0.0",
+    "history": "^4.7.2",
     "jquery": "^3.3.1",
     "mysql": "^2.15.0",
     "path": "^0.12.7",
