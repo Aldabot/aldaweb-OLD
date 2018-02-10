@@ -7,6 +7,7 @@
     "animate.css": "^3.5.2",
     "apisauce": "^0.14.3",
     "axios": "^0.17.1",
+    "babel-preset-stage-0": "^6.24.1",
     "connect-history-api-fallback": "^1.5.0",
     "connect-modrewrite": "^0.10.2",
     "dotenv": "^4.0.0",
@@ -22,6 +23,7 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
     "styled-spinkit": "^0.1.8",
     "uikit": "^3.0.0-beta.35",
     "uuid": "^3.1.0"

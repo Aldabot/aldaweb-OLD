@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import selectProvider from './selectProviderRedux';
-import isLoggedIn from './isLoggedIn';
 import { routerReducer } from 'react-router-redux';
+import login from './loginReducer.js';
 
 const aldaApp = combineReducers({
     selectProvider,
-    isLoggedIn,
+    login,
     router: routerReducer
 });
 
