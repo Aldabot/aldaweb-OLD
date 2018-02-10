@@ -23,18 +23,20 @@ provider:
 #            - "Ref" : "ServerlessDeploymentBucket"
 #            - "/*"
 
-package:
-  include:
-    - ./.env
-
 functions:
   loginStatus:
-    handler: handler.index
-
+    handler: loginStatus/handler.index
     events:
       - http:
           path: loginStatus 
           method: post 
+
+  isLoggedIn:
+    handler: isLoggedIn/handler.index
+    events:
+      - http:
+          path: isLoggedIn
+          method: post
 
 
 # you can add CloudFormation resource templates here
