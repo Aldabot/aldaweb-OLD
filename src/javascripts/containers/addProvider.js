@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux'
-import { selectProvider } from '../actions/index'
-import SelectProvider from '../components/selectProvider'
+import { connect } from 'react-redux';
+import { selectProvider } from '../actions/index';
+import SelectProvider from '../components/selectProvider.jsx';
 
 class AddProvider extends React.Component {
   render() {

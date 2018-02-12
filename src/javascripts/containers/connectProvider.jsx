@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { DoubleDounceLoading } from 'styled-spinkit';
 import { selectProviderStatus } from '../actions/index.js';
 import axios from 'axios';
+import { create } from 'apisauce';
 import { withRouter } from 'react-router';
 
 
@@ -11,6 +12,10 @@ var instance = axios.create({
     baseURL: 'https://ke30cp6bpd.execute-api.eu-west-1.amazonaws.com/production/saltedge/logins',
     timeout: 5000,
     headers: {}
+});
+const backendAPI = create({
+    baseURL: 'https://9u7wwafaq0.execute-api.eu-west-1.amazonaws.com/dev',
+    timeout: 5000
 });
 
 function getCookie(cname) {
@@ -61,12 +66,22 @@ class ConnectProvider extends React.Component {
             sessionId
         };
 
-        console.log(JSON.stringify(params, null, 4));
         instance.post('/', params).then((results) => {
-            console.log('done');
             setTimeout(() => {this.props.setProviderStatus('Updating Accounts');}, 1500);
             setTimeout(() => {this.props.setProviderStatus('Updating Transactions');}, 3000);
-            setTimeout(() => {this.props.setProviderStatus('success');}, 4000);
+
+            /* var getLoginStatusInterval = setInterval(() => {
+             *     backendAPI.post('/loginStatus', {loginId}).then((response) => {
+             *         console.log(JSON.stringify(response, null, 4));
+             *         if (response.status == "succeeded") {
+             *             this.props.setProviderStatus("success");
+             *         } else if (response.status == "failed") {
+             *             this.props.setProviderStatus("failed");
+             *         }
+             *     };
+             * });*/
+
+            /* setTimeout(() => {this.props.setProviderStatus('success');}, 4000);*/
             this.setState({ username: '', password: ''});
         }).catch((error) => {
             if(error.response) {
