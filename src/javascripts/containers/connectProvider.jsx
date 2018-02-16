@@ -58,7 +58,6 @@ class ConnectProvider extends React.Component {
         this.props.setProviderStatus('Creating Login');
 
         const sessionId = getCookie('session');
-        console.log(sessionId);
         const params = {
             providerCode:  this.props.provider.code,
             username: this.state.username,
@@ -69,6 +68,7 @@ class ConnectProvider extends React.Component {
         instance.post('/', params).then((results) => {
             setTimeout(() => {this.props.setProviderStatus('Updating Accounts');}, 1500);
             setTimeout(() => {this.props.setProviderStatus('Updating Transactions');}, 3000);
+            setTimeout(() => {this.props.setProviderStatus('success');}, 5000);
 
             /* var getLoginStatusInterval = setInterval(() => {
              *     backendAPI.post('/loginStatus', {loginId}).then((response) => {

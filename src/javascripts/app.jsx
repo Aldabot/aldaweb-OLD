@@ -47,7 +47,12 @@ class App extends React.Component {
                                 <SignUp {...props} isLoggedIn={this.props.login.isLoggedIn} />
                             </div>
                     }} />
-                    <Route exact path='/add_provider' component={requireAuth(AddProvider)} />
+                    <Route exact path='/add_provider' render={(props) => (
+                        <div>
+                            <DarkHeader />
+                            {React.createElement(requireAuth(AddProvider))}
+                        </div>
+                    )} />
                     <Route exact path='/connect_provider' render={(props) => (
                         <div>
                             <DarkHeader />

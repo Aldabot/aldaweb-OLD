@@ -30,6 +30,7 @@ functions:
       - http:
           path: loginStatus 
           method: post 
+          cors: true
 
   isLoggedIn:
     handler: isLoggedIn/handler.index
@@ -37,6 +38,7 @@ functions:
       - http:
           path: isLoggedIn
           method: post
+          cors: true
 
 
 # you can add CloudFormation resource templates here

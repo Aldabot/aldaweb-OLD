@@ -13,8 +13,8 @@ export default function requireAuth(Component) {
         checkAuth() {
 
             const { isLoggedIn, sessionId } = this.props;
-            console.log("start verify");
-            this.props.verifySession(sessionId);
+            /* console.log("start verify");*/
+            /* this.props.verifySession(sessionId);*/
 
             if ( !isLoggedIn ) {
                 console.log("change rout");

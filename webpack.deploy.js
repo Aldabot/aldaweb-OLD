@@ -22,7 +22,7 @@ module.exports = {
     context: PATHS.src,
     entry: ['babel-polyfill', './javascripts/index.jsx', './stylesheets/app.scss'],
     output: {
-        filename: '[name].js',
+        filename: 'bundle.js',
         path: PATHS.build
     },
     module: {

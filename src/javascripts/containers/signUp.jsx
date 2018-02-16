@@ -68,8 +68,6 @@ class SignUp extends React.Component {
                          size="xlarge">
                     </div>
                 </div>
-
-                <button className="uk-button uk-button-default" onClick={this.props.verifySession}>Test</button>
             </section>
         );
     }
