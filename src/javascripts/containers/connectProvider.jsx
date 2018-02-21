@@ -6,6 +6,7 @@ import { selectProviderStatus } from '../actions/index.js';
 import axios from 'axios';
 import { create } from 'apisauce';
 import { withRouter } from 'react-router';
+import providerActions from '../actions/selectProviderActions.js';
 
 
 var instance = axios.create({
@@ -94,6 +95,7 @@ class ConnectProvider extends React.Component {
                 }
             } else {
                 this.props.setProviderStatus('error');
+                console.log("lol");
                 console.log(error);
             }
         });
@@ -103,6 +105,7 @@ class ConnectProvider extends React.Component {
     }
 
     handleChange(event) {
+        this.props.setSaltedgeLoginStatus("test");
         const target = event.target;
         if(target.name == 'password') {
             this.setState({ password: target.value });
@@ -210,14 +213,15 @@ const mapStateToProps = (state, ownProps) => {
     return {
         isLoggedIn: state.isLoggedIn,
         provider: state.selectProvider.provider,
-        providerStatus: state.selectProvider.status
+        providerStatus: state.selectProvider.status,
     };
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         setProviderStatus: (status) => {
             dispatch(selectProviderStatus(status));
-        }
+        },
+        setSaltedgeLoginStatus: (status) => { providerActions.setSaltedgeLoginStatus(status) }
     };
 }
 export default connect(

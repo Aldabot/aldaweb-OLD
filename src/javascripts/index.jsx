@@ -52,8 +52,9 @@ const preloadState = {
     },
     selectProvider: {
         provider: {},
-        status: 'form'
-    }
+        status: 'form',
+        saltedgeLoginStatus: null
+    },
 }
 let store = createStore(
     aldaApp,

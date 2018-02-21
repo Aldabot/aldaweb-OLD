@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import selectProvider from './selectProviderRedux';
+import selectProvider from './selectProviderReducer.js';
 import { routerReducer } from 'react-router-redux';
 import login from './loginReducer.js';
 
