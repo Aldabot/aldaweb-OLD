@@ -24,7 +24,7 @@ export const selectProvider = (state = INITIAL_STATE, action) => {
     return {... state, provider: action.provider};
 };
 export const setStatus = (state = INITIAL_STATE, action) => {
-    return {... state, provider: action.providerStatus};
+    return {... state, status: action.status};
 };
 export const setSaltedgeLoginStatus = (state = INITIAL_STATE, action) => {
     console.log(JSON.stringify(action, null, 4));
