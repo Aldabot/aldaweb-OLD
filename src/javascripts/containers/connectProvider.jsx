@@ -6,7 +6,7 @@ import { selectProviderStatus } from '../actions/index.js';
 import axios from 'axios';
 import { create } from 'apisauce';
 import { withRouter } from 'react-router';
-import providerActions from '../actions/selectProviderActions.js';
+import { setSaltedgeLoginStatus, actions as selectProviderActions }  from '../reducers/selectProviderReducer.js';
 
 
 var instance = axios.create({
@@ -105,7 +105,6 @@ class ConnectProvider extends React.Component {
     }
 
     handleChange(event) {
-        this.props.setSaltedgeLoginStatus("test");
         const target = event.target;
         if(target.name == 'password') {
             this.setState({ password: target.value });
@@ -216,12 +215,12 @@ const mapStateToProps = (state, ownProps) => {
         providerStatus: state.selectProvider.status,
     };
 }
+
 const mapDispatchToProps = (dispatch, ownProps) => {
+    dispatch({type: "GET_SALTEDGE_LOGIN_STATUS", loginId: 961779});
     return {
-        setProviderStatus: (status) => {
-            dispatch(selectProviderStatus(status));
-        },
-        setSaltedgeLoginStatus: (status) => { providerActions.setSaltedgeLoginStatus(status) }
+        setProviderStatus: (status) => { dispatch(selectProviderActions.selectProviderStatus(status)); },
+        setSaltedgeLoginStatus: (status) => { dispatch(selectProviderActions.setSaltedgeLoginStatus(status)); }
     };
 }
 export default connect(

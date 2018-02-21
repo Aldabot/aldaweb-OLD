@@ -29,7 +29,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
-import { verifySessionSaga } from './sagas/index.js';
+import { verifySessionSaga, getSaltedgeLoginStatusSaga } from './sagas/index.js';
 
 import createHistory from 'history/createBrowserHistory';
 import { Route } from 'react-router';
@@ -38,6 +38,7 @@ import { ConnectedRouter, routerMiddleware, push } from 'react-router-redux';
 
 import aldaApp from './reducers/index';
 import App from './app.jsx';
+
 
 // routing
 const history = createHistory();
@@ -64,7 +65,8 @@ let store = createStore(
 
 // saga
 applyMiddleware(sagaMiddleware);
-sagaMiddleware.run(verifySessionSaga);
+sagaMiddleware.run(getSaltedgeLoginStatusSaga);
+
 
 render(
     <Provider store={store}>

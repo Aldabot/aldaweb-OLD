@@ -8,3 +8,11 @@ export const isValidSessionId = (sessionId) => {
         return response.isValid;
     });
 };
+
+export const getSaltedgeLoginStatusCall = (loginId) => {
+    return backendAPI.post("/loginStatus", {loginId}).then((response) => {
+        return response.data.status;
+    }).catch((error) => {
+        throw error;
+    });
+};
