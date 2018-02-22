@@ -13,7 +13,7 @@ export default class Footer extends React.Component {
 
             <div className="uk-navbar-center">
               <ul className="uk-navbar-nav">
-                  <li><Link to="/faqs" uk-scroll="true">Preguntas Frecuentes</Link></li>
+                  <li><Link to="/faq">Preguntas Frecuentes</Link></li>
                   <li><Link to="/privacidad">Privacidad</Link></li>
               </ul>
             </div>
