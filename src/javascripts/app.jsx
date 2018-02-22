@@ -11,6 +11,7 @@ import ConnectProvider from './containers/connectProvider.jsx';
 import Footer from './components/footer.js';
 import requireAuth from './containers/requireAuth.jsx';
 import { getCookieValue } from './lib/helpers.js';
+import Privacy from './components/privacy.jsx';
 
 
 class App extends React.Component {
@@ -57,6 +58,12 @@ class App extends React.Component {
                         <div>
                             <DarkHeader />
                             <ConnectProvider {...props} />
+                        </div>
+                    )} />
+                    <Route exact path='/privacidad' render={(props) => (
+                        <div>
+                            <DarkHeader />
+                            <Privacy />
                         </div>
                     )} />
                 </Switch>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Footer extends React.Component {
     render() {
@@ -12,8 +13,8 @@ export default class Footer extends React.Component {
 
             <div className="uk-navbar-center">
               <ul className="uk-navbar-nav">
-                  <li><a href="/faqs.html" uk-scroll="true">Preguntas Frecuentes</a></li>
-                  <li><a href="/privacidad.html">Privacidad</a></li>
+                  <li><Link to="/faqs" uk-scroll="true">Preguntas Frecuentes</Link></li>
+                  <li><Link to="/privacidad">Privacidad</Link></li>
               </ul>
             </div>
           </nav>
