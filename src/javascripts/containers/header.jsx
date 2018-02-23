@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import LoginButton from '../components/loginButton';
+import LoginButton from '../components/loginButton.jsx';
 import { logout } from '../actions/index';
 import UIkit from 'uikit';
 
@@ -45,55 +45,55 @@ export class HeaderComponent extends React.Component {
         const { isLoggedIn } = this.props;
 
 
-      return (
-        <div>
-          <nav className="uk-navbar-container uk-visible@s" uk-navbar="true">
-            <div className="uk-navbar-left uk-margin-left">
-                 <a href="http://aldabot.es" className="uk-navbar-item uk-logo uk-light">Alda</a>
+        return (
+            <div>
+                <nav className="uk-navbar-container uk-visible@s" uk-navbar="true">
+                    <div className="uk-navbar-left uk-margin-left">
+                        <a href="http://aldabot.es" className="uk-navbar-item uk-logo uk-light">Alda</a>
+                    </div>
+
+                    <div className="uk-navbar-right uk-margin-right">
+                        <ul className="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
+                            <li ><Link to='/'>Inicio</Link></li>
+                            <li><Link to="/faq">Preguntas Frecuentes</Link></li>
+                            {(isLoggedIn) ? <li><Link to="/add_provider">Añadir Banco</Link></li> : ""}
+                            <li><LoginButton isLoggedIn={this.props.isLoggedIn} logout={this.props.logout}/></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <nav className="uk-navbar-container uk-hidden@s"  uk-navbar="true">
+                    <div className="uk-navbar-right uk-margin-right uk-margin-top">
+                        <ul className="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
+                            <li>
+                                <button className="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
+                                    <span uk-icon="icon: menu"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {offcanvasNav}
+                </nav>
             </div>
-
-            <div className="uk-navbar-right uk-margin-right">
-                <ul className="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
-                    <li ><Link to='/'>Inicio</Link></li>
-                    <li><Link to="/faq">Preguntas Frecuentes</Link></li>
-                    {(isLoggedIn) ? <li><Link to="/add_provider">Añadir Banco</Link></li> : ""}
-                    <li><LoginButton isLoggedIn={this.props.isLoggedIn} logout={this.props.logout}/></li>
-                </ul>
-            </div>
-          </nav>
-
-          <nav className="uk-navbar-container uk-hidden@s"  uk-navbar="true">
-              <div className="uk-navbar-right uk-margin-right uk-margin-top">
-                <ul className="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
-                    <li>
-                      <button className="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
-                        <span uk-icon="icon: menu"></span>
-                      </button>
-                    </li>
-                </ul>
-              </div>
-
-              {offcanvasNav}
-          </nav>
-        </div>
-      );
+        );
     }
 }
 const mapStateToProps = (state, ownProps) => {
-  return {
-    isLoggedIn: state.isLoggedIn
-  }
+    return {
+        isLoggedIn: state.login.isLoggedIn
+    }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    logout: () => {
-      dispatch(logout())
+    return {
+        logout: () => {
+            dispatch(logout())
+        }
     }
-  }
 }
 export const Header = connect(
-  mapStateToProps,
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(HeaderComponent)
 
 

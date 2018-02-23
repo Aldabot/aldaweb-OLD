@@ -14,14 +14,15 @@ const PATHS = {
     js: path.join(__dirname, 'src/javascripts'),
     styles: path.join(__dirname, 'src/stylesheets'),
     node_modules: path.join(__dirname, 'node_modules'),
-    build: path.join(__dirname, 'dist')
-}
+    build: path.join(__dirname, 'build')
+};
+
 
 module.exports = {
     context: PATHS.src,
-    entry: ['./javascripts/index.js', './stylesheets/app.scss'],
+    entry: ['babel-polyfill', './javascripts/index.jsx', './stylesheets/app.scss'],
     output: {
-        filename: '[name].js',
+        filename: 'bundle.js',
         path: PATHS.build
     },
     module: {
@@ -45,7 +46,7 @@ module.exports = {
         fs: 'empty'
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['build']),
         new CopyWebpackPlugin([
             {
                 from: PATHS.index,

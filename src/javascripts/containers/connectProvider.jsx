@@ -4,13 +4,19 @@ import { Link } from 'react-router-dom';
 import { DoubleDounceLoading } from 'styled-spinkit';
 import { selectProviderStatus } from '../actions/index.js';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import { create } from 'apisauce';
+import { withRouter } from 'react-router';
+import { setSaltedgeLoginStatus, actions as selectProviderActions }  from '../reducers/selectProviderReducer.js';
 
 
 var instance = axios.create({
     baseURL: 'https://ke30cp6bpd.execute-api.eu-west-1.amazonaws.com/production/saltedge/logins',
     timeout: 5000,
     headers: {}
+});
+const backendAPI = create({
+    baseURL: 'https://9u7wwafaq0.execute-api.eu-west-1.amazonaws.com/dev',
+    timeout: 5000
 });
 
 function getCookie(cname) {
@@ -49,11 +55,12 @@ class ConnectProvider extends React.Component {
         }
     }
 
-    handleSubmit() {
+    handleSubmit(event) {
+        event.preventDefault();
+
         this.props.setProviderStatus('Creating Login');
 
         const sessionId = getCookie('session');
-        console.log(sessionId);
         const params = {
             providerCode:  this.props.provider.code,
             username: this.state.username,
@@ -61,12 +68,37 @@ class ConnectProvider extends React.Component {
             sessionId
         };
 
-        console.log(JSON.stringify(params, null, 4));
+
         instance.post('/', params).then((results) => {
-            console.log('done');
-            setTimeout(() => {this.props.setProviderStatus('Updating Accounts');}, 1500);
-            setTimeout(() => {this.props.setProviderStatus('Updating Transactions');}, 3000);
-            setTimeout(() => {this.props.setProviderStatus('success');}, 4000);
+            let loginId = results.data.loginId;
+            console.log("loginId", loginId);
+
+            setTimeout(() => {this.props.setProviderStatus('Updating Accounts');}, 10000);
+            setTimeout(() => {this.props.setProviderStatus('Updating Transactions');}, 20000);
+            /* setTimeout(() => {this.props.setProviderStatus('success');}, 5000);*/
+
+            setTimeout(() => {
+                var interval = setInterval(() => {
+                    if(this.props.providerStatus == "success" || this.props.providerStatus == "error") {
+                        window.clearInterval(interval);
+                    };
+                    this.props.getSaltedgeLoginStatus(loginId);
+                }, 2500);
+            }, 10000);
+
+
+            /* var getLoginStatusInterval = setInterval(() => {
+             *     backendAPI.post('/loginStatus', {loginId}).then((response) => {
+             *         console.log(JSON.stringify(response, null, 4));
+             *         if (response.status == "succeeded") {
+             *             this.props.setProviderStatus("success");
+             *         } else if (response.status == "failed") {
+             *             this.props.setProviderStatus("failed");
+             *         }
+             *     };
+             * });*/
+
+            /* setTimeout(() => {this.props.setProviderStatus('success');}, 4000);*/
             this.setState({ username: '', password: ''});
         }).catch((error) => {
             if(error.response) {
@@ -79,6 +111,7 @@ class ConnectProvider extends React.Component {
                 }
             } else {
                 this.props.setProviderStatus('error');
+                console.log("lol");
                 console.log(error);
             }
         });
@@ -140,7 +173,7 @@ class ConnectProvider extends React.Component {
                     {(() => {
                          switch(providerStatus) {
                              case "form":
-                                 return <form onSubmit={this.handleSubmit} className="uk-text-center">
+                                 return <form className="uk-text-center">
                                      <div className="uk-card rounded-border-bottom uk-align-center uk-card-default uk-width-1-2@m provider-form">
                                          <div className="uk-card-header rounded-border-top" style={{backgroundColor: provider.color}}>
                                              <img className="uk-align-center" src={provider.img}/>
@@ -160,7 +193,7 @@ class ConnectProvider extends React.Component {
                                          </div>
                                          <div className="uk-card-footer uk-flex uk-flex-middle">
                                              <Link to="/add_provider" className="uk-button uk-button-text uk-margin-right">Cancel</Link>
-                                             <input className="uk-input uk-form-large uk-form-width-large uk-margin-left" type="submit" value="Submit" />
+                                             <input className="uk-input uk-form-large uk-form-width-large uk-margin-left" onClick={this.handleSubmit} type="button" value="Submit" />
                                          </div>
                                      </div>
                                  </form>
@@ -195,14 +228,14 @@ const mapStateToProps = (state, ownProps) => {
     return {
         isLoggedIn: state.isLoggedIn,
         provider: state.selectProvider.provider,
-        providerStatus: state.selectProvider.status
+        providerStatus: state.selectProvider.status,
     };
 }
+
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        setProviderStatus: (status) => {
-            dispatch(selectProviderStatus(status));
-        }
+        setProviderStatus: (status) => { dispatch(selectProviderActions.setStatus(status)); },
+        getSaltedgeLoginStatus: (loginId) => { dispatch({type: "GET_SALTEDGE_LOGIN_STATUS", loginId}); }
     };
 }
 export default connect(

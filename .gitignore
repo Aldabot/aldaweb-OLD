@@ -6,3 +6,4 @@ public
 .webpack
 dist
 yarn-error.log
+build

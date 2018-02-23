@@ -1,7 +1,15 @@
-export const login = () => {
-  return {
-    type: 'LOGIN'
-  };
+export const login = (sessionId) => {
+    console.log(sessionId);
+    return {
+        type: 'LOGIN',
+        sessionId
+    };
+};
+
+export const verifySession = () => {
+    return {
+        type: 'VERIFY_SESSION'
+    };
 };
 
 export const logout = () => {
