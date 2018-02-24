@@ -40,6 +40,13 @@ functions:
           method: post
           cors: true
 
+  saltedgeCreateCustomer:
+    handler: saltedgeCreateCustomer/handler.index
+    events:
+      - http:
+          path: saltedgeCreateCustomer
+          method: post
+          cors: true
 
 # you can add CloudFormation resource templates here
 #resources:

@@ -73,8 +73,19 @@ export const index = (event, context, callback) => {
 ////////////////////////////////////////////////////////////////////////////////
 
 const respond = (callback, event, status) => {
+    const lambdaHeaders = {
+        "Access-Control-Allow-Origin" : "*", // "https://aldabot.es", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+    };
+
+    // CORS for testing
+    if (event.headers.origin == "http://localhost:8080") {
+        lambdaHeaders["Access-Control-Allow-Origin"] = "http://localhost:8080";
+    }
+
     const response = {
         statusCode: 200,
+        headers: lambdaHeaders,
         body: JSON.stringify({
             status,
             input: event
