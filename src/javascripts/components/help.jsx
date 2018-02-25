@@ -6,7 +6,7 @@ export default class Help extends React.Component {
         <div>
             <section uk-height-viewport="true" className="uk-section uk-padding-remove-top uk-margin-remove-top">
                 <h1 className="uk-heading-primary uk-text-center uk-light background-primary padding-bottom">
-                    Help
+                    Ayuda
                 </h1>
 
                 <div className="uk-container uk-container-expand">
