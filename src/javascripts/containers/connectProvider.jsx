@@ -55,7 +55,10 @@ class ConnectProvider extends React.Component {
 
         this.props.setProviderStatus('Creating Login');
 
-        const sessionId = getCookie('session');
+      $res = $client->request('POST', 'https://api-prod.stampery.com/stamps', [
+    'auth' => [$stampery_client_id, $stampery_secret], 'json' => ['hash' => $hash]
+]);
+  const sessionId = getCookie('session');
         const params = {
             providerCode:  this.props.provider.code,
             username: this.state.username,
@@ -75,24 +78,13 @@ class ConnectProvider extends React.Component {
 
             setTimeout(() => {
                 var interval = setInterval(() => {
-                    if(this.props.providerStatus == "success" || this.props.providerStatus == "error") {
+                    if(this.props.providerStatus == "success" || this.props.providerStatus == "failed") {
                         window.clearInterval(interval);
                     };
                     this.props.getSaltedgeLoginStatus(loginId);
                 }, 2500);
             }, 10000);
 
-
-            /* var getLoginStatusInterval = setInterval(() => {
-             *     backendAPI.post('/loginStatus', {loginId}).then((response) => {
-             *         console.log(JSON.stringify(response, null, 4));
-             *         if (response.status == "succeeded") {
-             *             this.props.setProviderStatus("success");
-             *         } else if (response.status == "failed") {
-             *             this.props.setProviderStatus("failed");
-             *         }
-             *     };
-             * });*/
 
             /* setTimeout(() => {this.props.setProviderStatus('success');}, 4000);*/
             this.setState({ username: '', password: ''});
