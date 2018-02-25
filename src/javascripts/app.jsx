@@ -15,6 +15,7 @@ import Privacy from './components/privacy.jsx';
 import Company from './components/company.jsx';
 import Help from './components/help.jsx';
 import Security from './components/security.jsx';
+import TermsAndConditions from './components/termsAndConditions.jsx';
 
 
 class App extends React.Component {
@@ -73,6 +74,12 @@ class App extends React.Component {
                         <div>
                             <DarkHeader />
                             <Privacy />
+                        </div>
+                    )} />
+                    <Route exact path='/terminosAndCondiciones' render={(props) => (
+                        <div>
+                            <DarkHeader />
+                            <TermsAndConditions />
                         </div>
                     )} />
                     <Route exact path='/securidad' render={(props) => (
