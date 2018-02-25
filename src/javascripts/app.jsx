@@ -14,6 +14,7 @@ import { getCookieValue } from './lib/helpers.js';
 import Privacy from './components/privacy.jsx';
 import Company from './components/company.jsx';
 import Help from './components/help.jsx';
+import Security from './components/security.jsx';
 
 
 class App extends React.Component {
@@ -72,6 +73,12 @@ class App extends React.Component {
                         <div>
                             <DarkHeader />
                             <Privacy />
+                        </div>
+                    )} />
+                    <Route exact path='/securidad' render={(props) => (
+                        <div>
+                            <DarkHeader />
+                            <Security />
                         </div>
                     )} />
                     <Route exact path='/ayuda' render={(props) => (

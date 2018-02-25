@@ -15,6 +15,7 @@ export default class Footer extends React.Component {
               <ul className="uk-navbar-nav">
                   <li><Link to="/faq">Preguntas Frecuentes</Link></li>
                   <li><Link to="/privacidad">Privacidad</Link></li>
+                  <li><Link to="/securidad">Securidad</Link></li>
                   <li><Link to="/ayuda">Ayuda</Link></li>
               </ul>
             </div>

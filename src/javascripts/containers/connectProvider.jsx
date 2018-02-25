@@ -55,10 +55,7 @@ class ConnectProvider extends React.Component {
 
         this.props.setProviderStatus('Creating Login');
 
-      $res = $client->request('POST', 'https://api-prod.stampery.com/stamps', [
-    'auth' => [$stampery_client_id, $stampery_secret], 'json' => ['hash' => $hash]
-]);
-  const sessionId = getCookie('session');
+        const sessionId = getCookie('session');
         const params = {
             providerCode:  this.props.provider.code,
             username: this.state.username,
