@@ -42,6 +42,10 @@ const getLogin = (loginId) => {
     });
 };
 
+function deleteLogin(loginId) {
+    return saltedgeApi.delete(`/logins/${loginId}`);
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // LAMBDA HANDLER
@@ -60,7 +64,15 @@ export const index = (event, context, callback) => {
                 status = "failed";
             }
         }
-        respond(callback, event, status);
+
+        if (status == "failed") {
+            // clean saltedge (delete login)
+            return deleteLogin(loginId).then(() => {
+                respond(callback, event, status);
+            });
+        } else {
+            respond(callback, event, status);
+        }
     }).catch((error) => {
         console.log(JSON.stringify(error, null, 4));
         respondError(callback, event, error);
@@ -73,8 +85,19 @@ export const index = (event, context, callback) => {
 ////////////////////////////////////////////////////////////////////////////////
 
 const respond = (callback, event, status) => {
+    let lambdaHeaders = {
+        "Access-Control-Allow-Origin" : "https://aldabot.es", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+    };
+
+    // CORS for testing
+    if (event.headers.origin == "http://localhost:8080") {
+        lambdaHeaders["Access-Control-Allow-Origin"] = "http://localhost:8080";
+    }
+
     const response = {
         statusCode: 200,
+        headers: lambdaHeaders,
         body: JSON.stringify({
             status,
             input: event

@@ -9,11 +9,6 @@ import { withRouter } from 'react-router';
 import { setSaltedgeLoginStatus, actions as selectProviderActions }  from '../reducers/selectProviderReducer.js';
 
 
-var instance = axios.create({
-    baseURL: 'https://ke30cp6bpd.execute-api.eu-west-1.amazonaws.com/production/saltedge/logins',
-    timeout: 5000,
-    headers: {}
-});
 const backendAPI = create({
     baseURL: 'https://9u7wwafaq0.execute-api.eu-west-1.amazonaws.com/dev',
     timeout: 5000
@@ -67,9 +62,10 @@ class ConnectProvider extends React.Component {
             password: this.state.password,
             sessionId
         };
+        console.log(params);
 
 
-        instance.post('/', params).then((results) => {
+        backendAPI.post('/saltedgeCreateCustomer', params).then((results) => {
             let loginId = results.data.loginId;
             console.log("loginId", loginId);
 
@@ -79,24 +75,13 @@ class ConnectProvider extends React.Component {
 
             setTimeout(() => {
                 var interval = setInterval(() => {
-                    if(this.props.providerStatus == "success" || this.props.providerStatus == "error") {
+                    if(this.props.providerStatus == "success" || this.props.providerStatus == "failed") {
                         window.clearInterval(interval);
                     };
                     this.props.getSaltedgeLoginStatus(loginId);
                 }, 2500);
             }, 10000);
 
-
-            /* var getLoginStatusInterval = setInterval(() => {
-             *     backendAPI.post('/loginStatus', {loginId}).then((response) => {
-             *         console.log(JSON.stringify(response, null, 4));
-             *         if (response.status == "succeeded") {
-             *             this.props.setProviderStatus("success");
-             *         } else if (response.status == "failed") {
-             *             this.props.setProviderStatus("failed");
-             *         }
-             *     };
-             * });*/
 
             /* setTimeout(() => {this.props.setProviderStatus('success');}, 4000);*/
             this.setState({ username: '', password: ''});

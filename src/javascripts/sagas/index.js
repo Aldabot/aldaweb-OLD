@@ -37,7 +37,7 @@ function* getSaltedgeLoginStatus(action) {
                 put({type: "SET_SALTEDGE_LOGIN_STATUS", saltedgeLoginStatus}),
                 put({type: "SET_STATUS", status: "success"})
             ];
-        } else if (saltedgeLoginStatus == "error" ) {
+        } else if (saltedgeLoginStatus == "failed" ) {
             yield [
                 put({type: "SET_SALTEDGE_LOGIN_STATUS", saltedgeLoginStatus}),
                 put({type: "SET_STATUS", status: "error"})

@@ -12,6 +12,10 @@ import Footer from './components/footer.js';
 import requireAuth from './containers/requireAuth.jsx';
 import { getCookieValue } from './lib/helpers.js';
 import Privacy from './components/privacy.jsx';
+import Company from './components/company.jsx';
+import Help from './components/help.jsx';
+import Security from './components/security.jsx';
+import TermsAndConditions from './components/termsAndConditions.jsx';
 
 
 class App extends React.Component {
@@ -34,6 +38,12 @@ class App extends React.Component {
                         <div>
                             <Header/>
                             <Home />
+                        </div>
+                    )} />
+                    <Route exact path='/empresa' render={(props) => (
+                        <div>
+                            <DarkHeader/>
+                            <Company />
                         </div>
                     )} />
                     <Route exact path='/faq' render={(props) => (
@@ -64,6 +74,24 @@ class App extends React.Component {
                         <div>
                             <DarkHeader />
                             <Privacy />
+                        </div>
+                    )} />
+                    <Route exact path='/terminosAndCondiciones' render={(props) => (
+                        <div>
+                            <DarkHeader />
+                            <TermsAndConditions />
+                        </div>
+                    )} />
+                    <Route exact path='/securidad' render={(props) => (
+                        <div>
+                            <DarkHeader />
+                            <Security />
+                        </div>
+                    )} />
+                    <Route exact path='/ayuda' render={(props) => (
+                        <div>
+                            <DarkHeader />
+                            <Help />
                         </div>
                     )} />
                 </Switch>

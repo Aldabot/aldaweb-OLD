@@ -55,6 +55,7 @@ export class HeaderComponent extends React.Component {
                     <div className="uk-navbar-right uk-margin-right">
                         <ul className="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
                             <li ><Link to='/'>Inicio</Link></li>
+                            <li><Link to="/empresa">Empresa</Link></li>
                             <li><Link to="/faq">Preguntas Frecuentes</Link></li>
                             {(isLoggedIn) ? <li><Link to="/add_provider">Añadir Banco</Link></li> : ""}
                             <li><LoginButton isLoggedIn={this.props.isLoggedIn} logout={this.props.logout}/></li>
@@ -145,6 +146,7 @@ export class DarkHeaderComponent extends React.Component {
             <div className="uk-navbar-right uk-margin-right">
                 <ul className="uk-navbar-nav" uk-scrollspy="target: > li; cls:uk-animation-slide-top-small; delay: 200">
                     <li><Link to='/'>Inicio</Link></li>
+                    <li><Link to="/empresa">Empresa</Link></li>
                     <li><Link to="/faq">Preguntas Frecuentes</Link></li>
                     {(isLoggedIn) ? <li><Link to="/add_provider">Añadir Banco</Link></li> : ""}
                     <li><LoginButton isLoggedIn={this.props.isLoggedIn} logout={this.props.logout}/></li>
