@@ -76,7 +76,7 @@ module.exports = {
                 region: 'eu-west-1'
             },
             s3UploadOptions: {
-                Bucket: 'aldabot.es'
+                Bucket: 'alda.bot'
             }
         })
     ]

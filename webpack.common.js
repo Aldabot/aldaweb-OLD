@@ -16,10 +16,13 @@ const PATHS = {
 
 module.exports = {
     context: PATHS.src,
-    entry: ['babel-polyfill', './javascripts/index.jsx', './stylesheets/app.scss'],
+    entry: {
+        "bundle.js" : ['babel-polyfill', './javascripts/index.jsx'],
+        "style" : './stylesheets/app.scss'
+    },
     output: {
-        filename: 'bundle.js',
-        path: PATHS.build
+        path: PATHS.build,
+        filename: "[name]"
     },
     module: {
         rules: [
@@ -41,6 +44,7 @@ module.exports = {
     node: {
         fs: 'empty'
     },
+    devtool: 'source-map',
     plugins: [
         new CleanWebpackPlugin(['build']),
         new CopyWebpackPlugin([
