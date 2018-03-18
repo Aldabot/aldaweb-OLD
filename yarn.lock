@@ -6822,6 +6822,10 @@ webpack-merge@^4.1.1:
   dependencies:
     lodash "^4.17.4"
 
+webpack-node-externals@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/webpack-node-externals/-/webpack-node-externals-1.6.0.tgz#232c62ec6092b100635a3d29d83c1747128df9bd"
+
 webpack-s3-plugin@^1.0.0-rc.0:
   version "1.0.0-rc.0"
   resolved "https://registry.yarnpkg.com/webpack-s3-plugin/-/webpack-s3-plugin-1.0.0-rc.0.tgz#b362a82a67d14859f5fcc7f7b4ee069451a8eaa8"
